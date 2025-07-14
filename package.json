@@ -5,8 +5,8 @@
   "packageManager": "pnpm@10.13.0",
   "repository": "https://github.com/radishzzz/astro-theme-retypeset",
   "scripts": {
-    "dev": "astro check && astro dev",
-    "build": "astro check && astro build && pnpm apply-lqip",
+    "dev": "astro check && astro dev --remote",
+    "build": "astro check && astro build --remote&& pnpm apply-lqip",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
@@ -17,7 +17,10 @@
     "update-theme": "esno scripts/update-theme.ts"
   },
   "dependencies": {
+    "@astrojs/db": "^0.14.14",
+    "@astrojs/markdown-remark": "^6.3.2",
     "@astrojs/mdx": "^4.3.0",
+    "@astrojs/node": "^9.3.0",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/sitemap": "^3.4.1",
     "@waline/client": "^3.6.0",
@@ -38,8 +41,10 @@
     "remark-math": "^6.0.0",
     "sanitize-html": "^2.17.0",
     "sharp": "^0.34.3",
+    "studiocms": "^0.1.0-beta.18",
     "twikoo": "^1.6.44",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "vite": "^6.3.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.2",
