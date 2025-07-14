@@ -1,17 +1,12 @@
-import db from '@astrojs/db'
 import mdx from '@astrojs/mdx'
-import node from '@astrojs/node'
+// import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
 import Compress from 'astro-compress'
-
-// import partytown from '@astrojs/partytown'
-
 import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import rehypeSlug from 'rehype-slug'
 import remarkDirective from 'remark-directive'
 import remarkMath from 'remark-math'
-import studiocms from 'studiocms'
 import UnoCSS from 'unocss/astro'
 import { themeConfig } from './src/config'
 import { langMap } from './src/i18n/config'
@@ -33,15 +28,12 @@ const imageConfig = imageHostURL
 export default defineConfig({
   site: siteUrl,
   base: '/',
-  trailingSlash: 'never',
-
+  trailingSlash: 'always',
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'viewport', // hover, tap, viewport, load
   },
-
   ...imageConfig,
-
   i18n: {
     locales: Object.entries(langMap).map(([path, codes]) => ({
       path,
@@ -49,22 +41,25 @@ export default defineConfig({
     })),
     defaultLocale,
   },
-
-  integrations: [UnoCSS({
-    injectReset: true,
-  }), mdx(), // partytown({
-  //   config: {
-  //     forward: ['dataLayer.push', 'gtag'],
-  //   },
-  // }),
-  sitemap(), Compress({
-    CSS: true,
-    HTML: true,
-    Image: true,
-    JavaScript: true,
-    SVG: false,
-  }), db(), studiocms()],
-
+  integrations: [
+    UnoCSS({
+      injectReset: true,
+    }),
+    mdx(),
+    // partytown({
+    //   config: {
+    //     forward: ['dataLayer.push', 'gtag'],
+    //   },
+    // }),
+    sitemap(),
+    Compress({
+      CSS: true,
+      HTML: true,
+      Image: true,
+      JavaScript: true,
+      SVG: false,
+    }),
+  ],
   markdown: {
     remarkPlugins: [
       remarkDirective,
@@ -89,19 +84,13 @@ export default defineConfig({
       },
     },
   },
-
   devToolbar: {
     enabled: false,
   },
-
   // For local development
   server: {
     headers: {
       'Access-Control-Allow-Origin': 'https://giscus.app',
     },
   },
-
-  adapter: node({
-    mode: 'standalone',
-  }),
 })
