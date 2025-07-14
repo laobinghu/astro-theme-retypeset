@@ -1,5 +1,5 @@
 import mdx from '@astrojs/mdx'
-import partytown from '@astrojs/partytown'
+// import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
 import Compress from 'astro-compress'
 import { defineConfig } from 'astro/config'
@@ -46,11 +46,11 @@ export default defineConfig({
       injectReset: true,
     }),
     mdx(),
-    partytown({
-      config: {
-        forward: ['dataLayer.push', 'gtag'],
-      },
-    }),
+    // partytown({
+    //   config: {
+    //     forward: ['dataLayer.push', 'gtag'],
+    //   },
+    // }),
     sitemap(),
     Compress({
       CSS: true,

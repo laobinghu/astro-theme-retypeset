@@ -99,7 +99,7 @@ export const themeConfig: ThemeConfig = {
     // https://waline.js.org/en/
     waline: {
       // server url
-      serverURL: 'https://retypeset-comment.radishzz.cc',
+      serverURL: '',
       // emoji url
       emoji: [
         'https://unpkg.com/@waline/emojis@1.2.0/tw-emoji',
@@ -165,7 +165,7 @@ export const themeConfig: ThemeConfig = {
       {
         name: 'Email',
         url: 'i@eaverse.top',
-      }
+      },
     ],
     // year of website start
     startYear: 2025,
