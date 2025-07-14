@@ -8,7 +8,7 @@ export const themeConfig: ThemeConfig = {
     // site subtitle
     subtitle: '過去を終え、未来を開く',
     // site description
-    description: '结束过去,逃避现实',
+    description: '埋葬过去,逃避现实',
     // use i18n title/subtitle/description from src/i18n/ui.ts instead of static ones above
     i18nTitle: false, // true, false
     // author name
@@ -92,7 +92,7 @@ export const themeConfig: ThemeConfig = {
     // twikoo
     // https://twikoo.js.org/
     twikoo: {
-      envId: 'twk.laobinghu.top',
+      envId: 'https://comment.eaverse.top/.netlify/functions/twikoo',
       // version: frontend version can be changed in package.json
     },
     // waline
