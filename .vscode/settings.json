@@ -1,10 +1,12 @@
 {
   "[markdown]": {
-    "editor.quickSuggestions": {
-      "comments": "on",
-      "other": "on",
-      "strings": "on"
-    }
+    "editor.fontSize": 14,
+    "editor.lineHeight": 26,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 64,
+    "editor.lineNumbers": "off",
+    "editor.quickSuggestions": false,
+    "editor.minimap.enabled": false
   },
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
@@ -128,5 +130,7 @@
     "webp",
     "Переверстка",
     "Русский"
-  ]
+  ],
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321"
 }
