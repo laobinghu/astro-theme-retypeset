@@ -138,7 +138,7 @@ export const themeConfig: ThemeConfig = {
     googleAnalyticsID: '',
     // umami analytics
     // https://cloud.umami.is
-    umamiAnalyticsID: '520af332-bfb7-4e7c-9386-5f273ee3d697',
+    umamiAnalyticsID: '',
     // follow verification
     // https://follow.is/
     follow: {
@@ -150,7 +150,7 @@ export const themeConfig: ThemeConfig = {
     // apiflash access key
     // automatically generate website screenshots for open graph images
     // get your access key at: https://apiflash.com/
-    apiflashKey: '',
+    apiflashKey: 'e599e81323fd485c9168fcdf1ef22f8c',
   },
   // SEO SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 
@@ -176,7 +176,7 @@ export const themeConfig: ThemeConfig = {
   preload: {
     // image hosting url
     // optimize remote images in Markdown files to avoid cumulative layout shift
-    imageHostURL: 'cdn.laobinghu.top',
+    imageHostURL: 'cdn.647382.xyz',
     // custom google analytics js
     // for users who route analytics javascript to a customized domain
     // see https://gist.github.com/xiaopc/0602f06ca465d76bd9efd3dda9393738
