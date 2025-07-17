@@ -12,7 +12,7 @@ export const themeConfig: ThemeConfig = {
     // use i18n title/subtitle/description from src/i18n/ui.ts instead of static ones above
     i18nTitle: true, // true, false
     // author name
-    author: '易曦维光Eaverse',
+    author: '易曦维光EaciWereGone',
     // site url
     url: 'https://eaverse.top',
     // favicon url
