@@ -57,7 +57,7 @@ export default defineConfig({
       HTML: true,
       Image: true,
       JavaScript: true,
-      SVG: false,
+      SVG: true,
     }),
   ],
   markdown: {
@@ -79,8 +79,8 @@ export default defineConfig({
     shikiConfig: {
       // Available themes: https://shiki.style/themes
       themes: {
-        light: 'github-light',
-        dark: 'github-dark',
+        light: 'material-theme-lighter',
+        dark: 'material-theme-darker',
       },
     },
   },
@@ -90,7 +90,7 @@ export default defineConfig({
   // For local development
   server: {
     headers: {
-      'Access-Control-Allow-Origin': 'https://giscus.app',
+      'Access-Control-Allow-Origin': 'https://comment.eaverse.top',
     },
   },
 })

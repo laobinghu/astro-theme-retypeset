@@ -10,9 +10,9 @@ export const themeConfig: ThemeConfig = {
     // site description
     description: '埋葬过去,逃避现实',
     // use i18n title/subtitle/description from src/i18n/ui.ts instead of static ones above
-    i18nTitle: false, // true, false
+    i18nTitle: true, // true, false
     // author name
-    author: '易曦维光',
+    author: '易曦维光Eaverse',
     // site url
     url: 'https://eaverse.top',
     // favicon url
@@ -26,18 +26,10 @@ export const themeConfig: ThemeConfig = {
     // default theme mode
     mode: 'auto', // light, dark, auto
     light: {
-      // primary color
-      // used for title, hover, etc
-      // oklch color picker: https://oklch.com/
-      primary: 'oklch(25% 0.005 298)',
-      // secondary color
-      // used for post text
-      secondary: 'oklch(40% 0.005 298)',
-      // background color
-      background: 'oklch(96% 0.005 298)',
-      // highlight color
-      // used for navbar, selected text, etc
-      highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)', // rgba(255,235,0,0.5)
+      primary: 'oklch(0.25 0 0)',
+      secondary: 'oklch(0.41 0 0)',
+      background: 'oklch(0.95 0.0237 59.39)',
+      highlight: 'oklch(0.93 0.195089 103.2532 / 0.5)',
     },
     dark: {
       // primary color
@@ -58,7 +50,7 @@ export const themeConfig: ThemeConfig = {
     locale: 'zh', // de, en, es, fr, ja, ko, pl, pt, ru, zh, zh-tw
     // more languages
     // not fill in the locale code above again, can be an empty array []
-    moreLocales: [], // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
+    moreLocales: ['en', 'ja', 'zh-tw'], // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
     // font styles for post text
     fontStyle: 'sans', // sans, serif
     // date format for posts
