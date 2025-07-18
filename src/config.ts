@@ -151,12 +151,12 @@ export const themeConfig: ThemeConfig = {
     // social links
     links: [
       {
-        name: 'RSS',
-        url: '/atom.xml', // or /rss.xml
+        name: '蜀ICP备2025120814号-3',
+        url: 'https://beian.miit.gov.cn/',
       },
       {
-        name: 'Email',
-        url: 'i@eaverse.top',
+        name: '川公网安备51070002110061号',
+        url: 'https://beian.mps.gov.cn/#/query/webSearch?code=51070002110061',
       },
     ],
     // year of website start
