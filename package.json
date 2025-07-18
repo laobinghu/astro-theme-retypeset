@@ -5,8 +5,9 @@
   "packageManager": "pnpm@10.13.0",
   "repository": "https://github.com/radishzzz/astro-theme-retypeset",
   "scripts": {
+    "prebuild": "node scripts/generate-version.mjs",
     "dev": "astro check && astro dev",
-    "build": "astro check && pnpm format-posts && astro build && pnpm apply-lqip",
+    "build": "pnpm prebuild && astro check && pnpm format-posts && astro build && pnpm apply-lqip",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",

@@ -1,12 +1,15 @@
 ---
 import { defaultLocale, themeConfig } from '@/config'
+
 import { getLangFromPath } from '@/i18n/lang'
+import versionInfo from '../version.json'
 
 const { author } = themeConfig.site
 const { links: socialLinks, startYear } = themeConfig.footer
 
 const currentYear = new Date().getFullYear()
 const year = Number(startYear) === currentYear ? startYear : `${startYear}-${currentYear}`
+
 
 // i18n RSS Feed Path
 const currentLang = getLangFromPath(Astro.url.pathname)
@@ -41,7 +44,18 @@ const footerLinkClass = 'highlight-hover py-0.8 transition-colors after:bottom-0
     © {year} {author}
   </p>
 
+  <div class="version-info">
+    Commit: {versionInfo.commitHash}
+    <time datetime={versionInfo.buildTime}>
+      | Build at:{new Date(versionInfo.buildTime).toLocaleDateString()}
+    </time>
+  </div>
+
   <p>
     Powered by <a class={footerLinkClass} href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a> and <a class={footerLinkClass} href="https://github.com/radishzzz/astro-theme-retypeset" target="_blank" rel="noopener noreferrer">Retypeset</a>
+  </p>
+
+  <p>
+  I modified the theme to fit my needs.
   </p>
 </footer>
