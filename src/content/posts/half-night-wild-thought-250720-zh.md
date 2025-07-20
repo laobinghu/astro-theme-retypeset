@@ -1,6 +1,6 @@
 ---
 title: 半夜发癫-25/7/20
-published: 2025-07-20T02:240:04.280Z
+published: 2025-07-20T02:20:04.280Z
 description: '东想西想,产生幻想'
 updated: ''
 tags:
@@ -24,5 +24,3 @@ abbrlink: 'half-night-wild-thought-250720-zh'
 但现在看来，当时的选择是对的。
 
 否则，我的精神病不会是现在才有些苗头，而是在初中就爆发了。
-
-

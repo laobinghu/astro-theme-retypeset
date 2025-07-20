@@ -1,6 +1,6 @@
 ---
 title: Midnight Ramblings-25/7/20
-published: 2025-07-20T02:240:04.280Z
+published: 2025-07-20T02:20:04.280Z
 description: 'Random thoughts lead to wild fantasies'
 updated: ''
 tags:
