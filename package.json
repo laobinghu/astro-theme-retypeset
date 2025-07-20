@@ -6,7 +6,7 @@
   "repository": "https://github.com/radishzzz/astro-theme-retypeset",
   "scripts": {
     "prebuild": "node scripts/generate-version.mjs",
-    "dev": "astro check && astro dev",
+    "dev": "pnpm prebuild && astro check && astro dev",
     "build": "pnpm prebuild && astro check && pnpm format-posts && astro build && pnpm apply-lqip",
     "preview": "astro preview",
     "astro": "astro",
