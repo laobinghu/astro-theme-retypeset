@@ -51,10 +51,8 @@ const navItems = [
     {navItems.map(item => (
       <li>
         <a
-          href={item.href === 'https://mzmc-api-eaverse.top/friends' ? item.href : getLocalizedPath(item.href)}
+          href={getLocalizedPath(item.href)}
           class={item.className}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           {item.label}
         </a>
