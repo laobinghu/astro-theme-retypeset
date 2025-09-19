@@ -31,6 +31,11 @@ const navItems = [
     label: currentUI.about,
     className: getNavItemClass(isAboutActive),
   },
+  {
+    href: 'https://mzmc-api-eaverse.top/friends',
+    label: currentUI.friends,
+    className: getNavItemClass(false),
+  },
 ]
 ---
 
@@ -46,8 +51,10 @@ const navItems = [
     {navItems.map(item => (
       <li>
         <a
-          href={getLocalizedPath(item.href)}
+          href={item.href === 'https://mzmc-api-eaverse.top/friends' ? item.href : getLocalizedPath(item.href)}
           class={item.className}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {item.label}
         </a>

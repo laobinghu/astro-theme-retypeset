@@ -7,6 +7,7 @@ export const ui = {
     tags: 'Tags',
     about: 'Über',
     toc: 'Inhaltsverzeichnis',
+    friends: 'Freunde',
   },
   'en': {
     title: 'One-Dimensional Universe Eaverse',
@@ -16,6 +17,7 @@ export const ui = {
     tags: 'Tags',
     about: 'About',
     toc: 'Table of Contents',
+    friends: 'Friends',
   },
   'es': {
     title: 'Universo Unidimensional Eaverse',
@@ -25,6 +27,7 @@ export const ui = {
     tags: 'Etiquetas',
     about: 'Sobre',
     toc: 'Índice',
+    friends: 'Amigos',
   },
   'fr': {
     title: 'Univers Unidimensionnel Eaverse',
@@ -34,6 +37,7 @@ export const ui = {
     tags: 'Étiquettes',
     about: 'À propos',
     toc: 'Table des matières',
+    friends: 'Amis',
   },
   'ja': {
     title: '一次元宇宙Eaverse',
@@ -43,6 +47,7 @@ export const ui = {
     tags: 'タグ',
     about: '关于',
     toc: '目次',
+    friends: '友達',
   },
   'ko': {
     title: '1차원 우주Eaverse',
@@ -52,6 +57,7 @@ export const ui = {
     tags: '태그',
     about: '에 관하여',
     toc: '목차',
+    friends: '친구들',
   },
   'pl': {
     title: 'Jednowymiarowy Wszechświat Eaverse',
@@ -61,6 +67,7 @@ export const ui = {
     tags: 'Tagi',
     about: 'O',
     toc: 'Spis treści',
+    friends: 'Przyjaciele',
   },
   'pt': {
     title: 'Universo Unidimensional Eaverse',
@@ -70,6 +77,7 @@ export const ui = {
     tags: 'Tags',
     about: 'Sobre',
     toc: 'Sumário',
+    friends: 'Amigos',
   },
   'ru': {
     title: 'Одномерная вселенная Eaverse',
@@ -79,6 +87,7 @@ export const ui = {
     tags: 'Теги',
     about: 'О',
     toc: 'Содержание',
+    friends: 'Друзья',
   },
   'zh': {
     title: '一维宇宙Eaverse',
@@ -88,6 +97,7 @@ export const ui = {
     tags: '标签',
     about: '关于',
     toc: '目录',
+    friends: '友联',
   },
   'zh-tw': {
     title: '一維宇宙Eaverse',
@@ -97,5 +107,6 @@ export const ui = {
     tags: '標籤',
     about: '關於',
     toc: '目錄',
+    friends: '友聯',
   },
 }
