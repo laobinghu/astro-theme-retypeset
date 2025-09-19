@@ -47,8 +47,8 @@ export const { getStaticPaths, GET } = OGImageRoute({
     },
     fonts: [
       // 主用字体链接 - jsdmirror 可能在某些环境无法访问
-      'https://cdn.jsdmirror.cn/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Bold.otf',
-      'https://cdn.jsdmirror.cn/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Regular.otf',
+      'https://cdn.647382.xyz/assets/NotoSansSC-Regular.otf',
+      'https://cdn.647382.xyz/assets/NotoSansSC-Bold.otf',
     ],
     bgGradient: [[242, 241, 245]],
   }),
