@@ -53,7 +53,7 @@ const navItems = [
     {navItems.map(item => (
       <li>
         <a
-          href={getLocalizedPath(item.href)}
+          href={item.href.startsWith('http') ? item.href : getLocalizedPath(item.href)}
           class={item.className}
         >
           {item.label}
