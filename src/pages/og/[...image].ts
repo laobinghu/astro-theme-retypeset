@@ -40,16 +40,15 @@ export const { getStaticPaths, GET } = OGImageRoute({
         lineHeight: 1.5,
       },
       description: {
-        families: ['Noto Sans SC'], // or Noto Serif SC
+        families: ['Noto Sans SC'],
         color: [72, 71, 74],
         lineHeight: 1.5,
       },
     },
     fonts: [
+      // 主用字体链接 - jsdmirror 可能在某些环境无法访问
       'https://cdn.jsdmirror.cn/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Bold.otf',
       'https://cdn.jsdmirror.cn/gh/notofonts/noto-cjk@main/Sans/SubsetOTF/SC/NotoSansSC-Regular.otf',
-      // 'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Serif/SubsetOTF/SC/NotoSerifSC-Bold.otf',
-      // 'https://cdn.jsdelivr.net/gh/notofonts/noto-cjk@main/Serif/SubsetOTF/SC/NotoSerifSC-Regular.otf',
     ],
     bgGradient: [[242, 241, 245]],
   }),
