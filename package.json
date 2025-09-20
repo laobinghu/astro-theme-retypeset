@@ -7,7 +7,8 @@
   "scripts": {
     "prebuild": "node scripts/generate-version.mjs",
     "dev": "pnpm prebuild && astro check && astro dev",
-    "build": "pnpm prebuild && astro check && pnpm format-posts && astro build && pnpm apply-lqip",
+    "build": "pnpm prebuild && astro check && pnpm format-posts && astro build && pnpm apply-lqip && node scripts/generate-urls.cjs",
+    "gen-urls": "node scripts/generate-urls.cjs",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
