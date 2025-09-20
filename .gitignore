@@ -27,3 +27,4 @@ pnpm-debug.log*
 
 
 src\version.json
+src/version.json
