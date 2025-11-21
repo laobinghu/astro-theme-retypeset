@@ -1,5 +1,5 @@
 ---
-title: '[Simple Analysis] How Can You Talk About Self-Reliance When You Can't Even Protect Yourself?'
+title: '[Simple Analysis] How Can You Talk About Self-Reliance When You Can''t Even Protect Yourself?'
 published: 2025-11-21T11:27:46.772Z
 description: 'Those who are self-reliant must first be able to protect themselves.'
 updated: ''
@@ -14,7 +14,7 @@ draft: false
 pin: 0
 toc: true
 lang: 'en'
-abbrlink: 'protection-profession-pride'
+abbrlink: 'protection-profession-pride-en'
 ---
 > [!TIP]
 > This article was obtained through direct image recognition, so recognition errors may exist.

@@ -13,7 +13,7 @@ draft: false
 pin: 0
 toc: true
 lang: 'zh-tw'
-abbrlink: 'night-diary-251113'
+abbrlink: 'night-diary-251113-zh-tw'
 ---
 > [!TIP]
 > 由於本文章由圖片直接識別得到，所以可能存在識別錯誤。

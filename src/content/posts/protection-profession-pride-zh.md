@@ -14,7 +14,7 @@ draft: false
 pin: 0
 toc: true
 lang: 'zh'
-abbrlink: 'protection-profession-pride'
+abbrlink: 'protection-profession-pride-zh'
 ---
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。

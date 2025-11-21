@@ -13,7 +13,7 @@ draft: false
 pin: 0
 toc: true
 lang: 'en'
-abbrlink: 'night-diary-251113'
+abbrlink: 'night-diary-251113-en'
 ---
 > [!TIP]
 > This article was obtained through direct image recognition, so recognition errors may exist.
