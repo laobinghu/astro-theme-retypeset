@@ -19,11 +19,11 @@
     "update-theme": "esno scripts/update-theme.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.3",
+    "@astrojs/mdx": "^4.3.13",
     "@astrojs/partytown": "^2.1.4",
-    "@astrojs/sitemap": "^3.4.2",
+    "@astrojs/sitemap": "^3.6.0",
     "@waline/client": "^3.6.0",
-    "astro": "^5.12.8",
+    "astro": "^5.16.6",
     "astro-compress": "^2.3.8",
     "astro-og-canvas": "^0.7.0",
     "canvaskit-wasm": "^0.40.0",
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.2",
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.6",
     "@lokesh.dhakar/quantize": "^1.4.0",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^24.0.13",
