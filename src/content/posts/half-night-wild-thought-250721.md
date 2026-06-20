@@ -7,7 +7,7 @@ tags:
   - 半夜发癫
   - 自我反思
   - 恋旧情结
-  - 教育经历
+  - 教育
   - 编程竞赛
   - 现实落差
   - 心理健康
@@ -18,7 +18,7 @@ draft: false
 pin: 0
 toc: true
 lang: 'zh'
-abbrlink: 'half-night-wild-thought-250721-zh'
+abbrlink: 'half-night-wild-thought-250721'
 ---
 ~~我就不应该三更半夜和别人聊天的~~
 

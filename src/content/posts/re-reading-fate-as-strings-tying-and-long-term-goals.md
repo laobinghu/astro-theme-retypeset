@@ -1,5 +1,6 @@
 ---
 date: 2026-01-03T07:11:38.002Z
+published: 2026-01-03
 updated: 2026-01-11T04:13:53.319Z
 title: 再读《命若琴弦》：把命吊着和长远目标
 slug: re-reading-fate-as-strings-tying-and-long-term-goals

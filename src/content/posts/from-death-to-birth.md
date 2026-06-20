@@ -1,5 +1,6 @@
 ---
 date: 2026-01-05T03:56:20.611Z
+published: 2026-01-05
 updated: 2026-01-17T18:23:01.368Z
 title: 2025的劫后余生与2026的17岁生日
 slug: from-death-to-birth

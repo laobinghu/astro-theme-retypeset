@@ -9,13 +9,13 @@ tags:
   - 政策
   - 家庭
   - 学生生活
-  - 社会现象
+  - 社会观察
   - 评论
 draft: false
 pin: 0
 toc: true
 lang: ''
-abbrlink: 'fall-break-tkinking-zh'
+abbrlink: 'fall-break-tkinking'
 ---
 
 > [!TIP]

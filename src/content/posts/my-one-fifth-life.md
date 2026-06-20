@@ -11,7 +11,7 @@ draft: false
 pin: 0
 toc: true
 lang: 'zh'
-abbrlink: 'my-one-fifth-life-zh'
+abbrlink: 'my-one-fifth-life'
 ---
 
 我并非绵阳本地人。

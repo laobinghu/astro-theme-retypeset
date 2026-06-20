@@ -4,17 +4,16 @@ published: 2025-11-21T11:27:46.772Z
 description: '自立自强者,先自保也。'
 updated: ''
 tags:
-  - Note
   - 青年
   - 自立自强
   - 自保能力
-  - 教育反思
+  - 教育
   - 社会观察
 draft: false
 pin: 0
 toc: true
 lang: 'zh'
-abbrlink: 'protection-profession-pride-zh'
+abbrlink: 'protection-profession-pride'
 ---
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。  

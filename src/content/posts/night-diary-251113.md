@@ -4,16 +4,15 @@ published: 2025-11-21T11:32:21.022Z
 description: '坏事连篇，小生可有招？'
 updated: ''
 tags:
-  - Note
   - 日记
-  - 生活记录
+  - 个人日常
   - 心情随笔
   - 学生生活
 draft: false
 pin: 0
 toc: true
 lang: 'zh'
-abbrlink: 'night-diary-251113-zh'
+abbrlink: 'night-diary-251113'
 ---
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。  

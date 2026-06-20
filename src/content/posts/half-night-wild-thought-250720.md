@@ -14,7 +14,7 @@ draft: false
 pin: 0
 toc: true
 lang: 'zh'
-abbrlink: 'half-night-wild-thought-250720-zh'
+abbrlink: 'half-night-wild-thought-250720'
 ---
 
 初中的时候，每次做 80 路去游仙，看到左边一幢大楼上书“绵阳中学英才学校”时，内心总会五味杂陈。

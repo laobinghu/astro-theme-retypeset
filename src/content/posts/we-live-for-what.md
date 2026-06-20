@@ -4,7 +4,7 @@ published: 2025-09-27T11:47:05.417Z
 description: '读史铁生《命若琴弦》后悟'
 updated: ''
 tags:
-  - 人生思考
+  - 思考
   - 史铁生
   - 命若琴弦
   - 生命意义
@@ -13,7 +13,7 @@ draft: false
 pin: 0
 toc: true
 lang: 'zh'
-abbrlink: 'we-live-for-what-zh'
+abbrlink: 'we-live-for-what'
 ---
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。

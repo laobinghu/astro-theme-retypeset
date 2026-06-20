@@ -1,21 +1,18 @@
 ---
-title: Цветовые Схемы Темы
+title: 主题配色指南
 published: 2025-04-11
 tags:
-  - Руководство
+  - 指南
 toc: false
-lang: ru
+lang: zh
 abbrlink: theme-color-schemes
 ---
 
-Retypeset определяет цветовые схемы темы на основе цветового пространства [OKLCH](https://oklch.com/), с предустановленной схемой черного, белого и серого цветов, имитирующей печатный стиль.
+Retypeset 基于 [OKLCH](https://oklch.com/) 颜色空间来定义主题配色，默认为模拟印刷风格的黑白灰配色。
 
-Для удовлетворения потребностей в персонализации я создал несколько цветовых схем для темы. Вы можете заменить стандартную цветовую схему в [src/config.ts](https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts) и перезапустить сервер разработки, чтобы просмотреть новую цветовую схему.
+为满足个性化需求，我为主题制作了一些配色方案。你可以在 [src/config.ts](https://github.com/radishzzz/astro-theme-retypeset/blob/master/src/config.ts) 中替换默认配色，并重启开发服务器以预览新配色。
 
-## Бледно-зелёный
-
-![Light mode](../_images/1-light.jpeg)
-![Dark mode](../_images/1-dark.jpeg)
+## 葱白
 
 ```
 light: {
@@ -32,10 +29,7 @@ dark: {
 },
 ```
 
-## Воронёный
-
-![Light mode](../_images/2-light.jpeg)
-![Dark mode](../_images/2-dark.jpeg)
+## 鸦青
 
 ```
 light: {
@@ -52,10 +46,7 @@ dark: {
 },
 ```
 
-## Чернильно-синий
-
-![Light mode](../_images/4-light.jpeg)
-![Dark mode](../_images/4-dark.jpeg)
+## 墨蓝
 
 ```
 light: {
@@ -72,10 +63,7 @@ dark: {
 },
 ```
 
-## Кремовый
-
-![Light mode](../_images/3-light.jpeg)
-![Dark mode](../_images/3-dark.jpeg)
+## 米黄
 
 ```
 light: {
