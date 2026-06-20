@@ -6,7 +6,7 @@ updated: ''
 tags:
   - 诗歌
   - 对比
-  - 社会现象
+  - 社会观察
 draft: false
 pin: 0
 toc: true

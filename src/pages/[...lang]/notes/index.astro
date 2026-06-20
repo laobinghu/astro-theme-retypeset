@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content'
+import { allLocales } from '@/config'
+import { getLangFromLocale, getLangRouteParam } from '@/i18n/lang'
+import Layout from '@/layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  return allLocales.map(lang => ({
+    params: { lang: getLangRouteParam(lang) },
+  }))
+}
+
+const currentLang = getLangFromLocale(Astro.currentLocale)
+const allNotes = await getCollection('notes')
+const sortedNotes = allNotes.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)
+---
+
+<Layout>
+  <div class="uno-decorative-line" />
+  <div class="heti">
+    <h1>笔记</h1>
+    <ul>
+      {sortedNotes.map(note => (
+        <li class="mb-4">
+          <a
+            href={`/${currentLang === 'zh' ? '' : currentLang}/notes/${note.data.slug}/`}
+            class="c-primary highlight-hover font-bold"
+          >
+            {note.data.title}
+          </a>
+          <time class="ml-2 c-secondary text-sm">
+            {note.data.date.toLocaleDateString('zh-CN')}
+          </time>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Layout>

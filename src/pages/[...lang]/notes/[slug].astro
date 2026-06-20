@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getCollection, render } from 'astro:content'
+import { allLocales } from '@/config'
+import { getLangRouteParam } from '@/i18n/lang'
+import Layout from '@/layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  const notes: CollectionEntry<'notes'>[] = await getCollection('notes')
+
+  return allLocales.flatMap(lang =>
+    notes.map((note) => {
+      return {
+        params: { lang: getLangRouteParam(lang), slug: note.data.slug },
+        props: { note },
+      }
+    }),
+  )
+}
+
+interface Props {
+  note: CollectionEntry<'notes'>
+}
+
+const { note } = Astro.props
+const { Content } = await render(note)
+---
+
+<Layout postTitle={note.data.title}>
+  <article class="heti">
+    <h1>{note.data.title}</h1>
+    <div class="mb-8 c-secondary font-time text-sm">
+      <time>
+        {note.data.date.toLocaleDateString('zh-CN', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          weekday: 'long',
+        })}
+      </time>
+      {note.data.mood && <span class="ml-4">心情: {note.data.mood}</span>}
+      {note.data.weather && <span class="ml-4">天气: {note.data.weather}</span>}
+    </div>
+    <div id="post-content">
+      <Content />
+    </div>
+  </article>
+</Layout>

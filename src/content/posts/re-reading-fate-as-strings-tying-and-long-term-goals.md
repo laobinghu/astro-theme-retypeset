@@ -9,7 +9,6 @@ categories: 说了什么
 tags:
   - 思考
   - 命若琴弦
-  - 读后感
   - 文学阅读
 type: post
 permalink: /posts/talk/re-reading-fate-as-strings-tying-and-long-term-goals
@@ -27,7 +26,7 @@ permalink: /posts/talk/re-reading-fate-as-strings-tying-and-long-term-goals
 ------
 
 > [!TIP]
-> 以下内容由豆包续写,本人做了一定改动.  
+> 以下内容由豆包续写，本人做了一定改动。 
 > ~~因为我实在写不下去了~~
 
 人生大抵也是如此，那根名为“目标”的弦，若长期松弛着，日子便会失了准星，漫无边际地飘着，最终沦为空洞的消磨。老瞎子一辈子抱着“弹断一千根琴弦就能看见光明”的念想，一路跋山涉水，在风餐露宿中拨弄琴弦，把岁月都揉进了指尖的旋律里。他不知道那药方是假的，可正是这束虚幻的光，撑着他走过了无数个暗无天日的晨昏，让他的生命有了沉甸甸的重量。

@@ -35,4 +35,34 @@ const about = defineCollection({
   }),
 })
 
-export const collections = { posts, about }
+const notes = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './markdown/notes' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),
+    updated: z.preprocess(
+      val => val === '' ? undefined : val,
+      z.date().optional(),
+    ),
+    slug: z.coerce.string(),
+    id: z.number(),
+    mood: z.string().nullable().optional().default(null),
+    weather: z.string().nullable().optional().default(null),
+  }),
+})
+
+const pages = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './markdown/pages' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),
+    updated: z.preprocess(
+      val => val === '' ? undefined : val,
+      z.date().optional(),
+    ),
+    slug: z.string(),
+    subtitle: z.string().optional().default(''),
+  }),
+})
+
+export const collections = { posts, about, notes, pages }

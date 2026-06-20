@@ -8,6 +8,9 @@ interface Translation {
   tags: string
   about: string
   toc: string
+  friends: string
+  notes: string
+  self: string
 }
 
 export const ui: Record<Language, Translation> = {
@@ -20,6 +23,8 @@ export const ui: Record<Language, Translation> = {
     about: 'Über',
     toc: 'Inhaltsverzeichnis',
     friends: 'Freunde',
+    notes: 'Notizen',
+    self: 'Selbstdefinition',
   },
   'en': {
     title: 'One-Dimensional Universe Eaverse',
@@ -30,6 +35,8 @@ export const ui: Record<Language, Translation> = {
     about: 'About',
     toc: 'Table of Contents',
     friends: 'Friends',
+    notes: 'Notes',
+    self: 'Self Definition',
   },
   'es': {
     title: 'Universo Unidimensional Eaverse',
@@ -40,6 +47,8 @@ export const ui: Record<Language, Translation> = {
     about: 'Sobre',
     toc: 'Índice',
     friends: 'Amigos',
+    notes: 'Notas',
+    self: 'Autodefinición',
   },
   'fr': {
     title: 'Univers Unidimensionnel Eaverse',
@@ -50,6 +59,8 @@ export const ui: Record<Language, Translation> = {
     about: 'À propos',
     toc: 'Table des matières',
     friends: 'Amis',
+    notes: 'Notes',
+    self: 'Auto-définition',
   },
   'ja': {
     title: '一次元宇宙Eaverse',
@@ -60,6 +71,8 @@ export const ui: Record<Language, Translation> = {
     about: '关于',
     toc: '目次',
     friends: '友達',
+    notes: 'ノート',
+    self: '自己定義',
   },
   'ko': {
     title: '1차원 우주Eaverse',
@@ -70,6 +83,8 @@ export const ui: Record<Language, Translation> = {
     about: '에 관하여',
     toc: '목차',
     friends: '친구들',
+    notes: '노트',
+    self: '자기 정의',
   },
   'pl': {
     title: 'Jednowymiarowy Wszechświat Eaverse',
@@ -80,6 +95,8 @@ export const ui: Record<Language, Translation> = {
     about: 'O',
     toc: 'Spis treści',
     friends: 'Przyjaciele',
+    notes: 'Notatki',
+    self: 'Samookreślenie',
   },
   'pt': {
     title: 'Universo Unidimensional Eaverse',
@@ -90,6 +107,8 @@ export const ui: Record<Language, Translation> = {
     about: 'Sobre',
     toc: 'Sumário',
     friends: 'Amigos',
+    notes: 'Notas',
+    self: 'Autodefinição',
   },
   'ru': {
     title: 'Одномерная вселенная Eaverse',
@@ -100,6 +119,8 @@ export const ui: Record<Language, Translation> = {
     about: 'О',
     toc: 'Содержание',
     friends: 'Друзья',
+    notes: 'Заметки',
+    self: 'Самоопределение',
   },
   'zh': {
     title: '一维宇宙Eaverse',
@@ -110,6 +131,8 @@ export const ui: Record<Language, Translation> = {
     about: '关于',
     toc: '目录',
     friends: '友联',
+    notes: '笔记',
+    self: '自设',
   },
   'zh-tw': {
     title: '一維宇宙Eaverse',
@@ -120,5 +143,7 @@ export const ui: Record<Language, Translation> = {
     about: '關於',
     toc: '目錄',
     friends: '友聯',
+    notes: '筆記',
+    self: '自設',
   },
 }

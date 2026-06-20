@@ -8,7 +8,7 @@ tags:
   - 史铁生
   - 命若琴弦
   - 生命意义
-  - 抑郁
+  - 心理健康
 draft: false
 pin: 0
 toc: true

@@ -5,7 +5,6 @@ description: '因为人到底是恋旧的'
 updated: ''
 tags:
   - 回忆
-  - 执念
   - 人生
   - 思考
 draft: false
