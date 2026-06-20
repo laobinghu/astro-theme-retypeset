@@ -60,10 +60,10 @@
     "postcss"
   ],
 
+  // Use workspace TypeScript version instead of built-in
   "typescript.tsdk": "node_modules/typescript/lib",
-  "files.associations": {
-    "*.mdx": "markdown"
-  },
+
+  // Custom dictionary words for spell checker
   "cSpell.words": [
     "abbrlink",
     "antfu",
@@ -73,20 +73,17 @@
     "attributify",
     "autocorrect",
     "backref",
-    "bbbi",
     "bilibili",
-    "bitdepth",
     "Blockquotes",
     "brackethighlighter",
     "bvid",
     "canvaskit",
+    "codepen",
     "Cpath",
     "Csvg",
-    "dhakar",
     "Disqus",
-    "esno",
     "Español",
-    "framespacing",
+    "folo",
     "Français",
     "Frontmatter",
     "Fuwari",
@@ -94,18 +91,13 @@
     "gtag",
     "heti",
     "katex",
-    "Lightbox",
-    "lokesh",
     "lqip",
     "mdast",
-    "msrc",
     "msvalidate",
-    "ndarray",
     "nocss",
     "noopener",
     "noreferrer",
     "Noto",
-    "Oklab",
     "oklch",
     "partytown",
     "playbtn",

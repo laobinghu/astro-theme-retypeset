@@ -1,4 +1,16 @@
-export const ui = {
+import type { Language } from '@/i18n/config'
+
+interface Translation {
+  title: string
+  subtitle: string
+  description: string
+  posts: string
+  tags: string
+  about: string
+  toc: string
+}
+
+export const ui: Record<Language, Translation> = {
   'de': {
     title: 'Eindimensionales Universum Eaverse',
     subtitle: 'Beende die Vergangenheit, öffne die Zukunft',

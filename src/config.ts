@@ -10,11 +10,14 @@ export const themeConfig: ThemeConfig = {
     // site description
     description: '埋葬过去,逃避现实',
     // use i18n title/subtitle/description from src/i18n/ui.ts instead of static ones above
-    i18nTitle: true, // true, false
+    i18nTitle: true, // true | false
     // author name
     author: '易曦维光EaciWereGone',
     // site url
     url: 'https://eaverse.top',
+    // base path
+    // root directory for all pages and assets
+    base: '/', // e.g., '/blog', '/docs'
     // favicon url
     // recommended formats: svg, png or ico
     favicon: '/icons/favicon.svg', // or https://example.com/favicon.svg
@@ -47,7 +50,7 @@ export const themeConfig: ThemeConfig = {
   // GLOBAL SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
   global: {
     // default language
-    locale: 'zh', // de, en, es, fr, ja, ko, pl, pt, ru, zh, zh-tw
+    locale: 'zh', // de | en | es | fr | ja | ko | pl | pt | ru | zh | zh-tw
     // more languages
     // not fill in the locale code above again, can be an empty array []
     moreLocales: [], // ['de', 'en', 'es', 'fr', 'ja', 'ko', 'pl', 'pt', 'ru', 'zh', 'zh-tw']
@@ -60,14 +63,14 @@ export const themeConfig: ThemeConfig = {
     // KaTeX math rendering
     katex: true, // true, false
     // reduce motion
-    reduceMotion: false, // true, false
+    reduceMotion: false, // true | false
   },
   // GLOBAL SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 
   // COMMENT SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
   comment: {
     // enable comment system
-    enabled: true, // true, false
+    enabled: true, // true | false
     // giscus
     // https://giscus.app/
     giscus: {
@@ -99,9 +102,9 @@ export const themeConfig: ThemeConfig = {
         // more emojis: https://waline.js.org/en/guide/features/emoji.html
       ],
       // gif search
-      search: false, // true, false
+      search: false, // true | false
       // image uploader
-      imageUploader: false, // true, false
+      imageUploader: false, // true | false
     },
   },
   // COMMENT SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
@@ -140,7 +143,7 @@ export const themeConfig: ThemeConfig = {
       userID: '',
     },
     // apiflash access key
-    // automatically generate website screenshots for open graph images
+    // generate website screenshots for open graph images
     // get your access key at: https://apiflash.com/
     apiflashKey: 'e599e81323fd485c9168fcdf1ef22f8c',
   },
@@ -170,7 +173,7 @@ export const themeConfig: ThemeConfig = {
     // optimize remote images in Markdown files to avoid cumulative layout shift
     imageHostURL: 'cdn.647382.xyz',
     // custom google analytics js
-    // for users who route analytics javascript to a customized domain
+    // for users who proxy tracking scripts to a custom domain
     // see https://gist.github.com/xiaopc/0602f06ca465d76bd9efd3dda9393738
     customGoogleAnalyticsJS: '',
     // custom umami analytics js
@@ -181,8 +184,7 @@ export const themeConfig: ThemeConfig = {
   // PRELOAD SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 }
 
-export default themeConfig
-
+export const base = themeConfig.site.base === '/' ? '' : themeConfig.site.base.replace(/\/$/, '')
 export const defaultLocale = themeConfig.global.locale
 export const moreLocales = themeConfig.global.moreLocales
 export const allLocales = [defaultLocale, ...moreLocales]
