@@ -1,5 +1,5 @@
 ---
-title: 观AI吟味诗有感而作
+title: '观AI吟味诗有感而作'
 published: 2026-04-18T17:46:10.753Z
 updated: 2026-04-18T17:55:44.881Z
 description: ''

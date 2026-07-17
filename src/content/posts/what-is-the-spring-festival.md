@@ -1,5 +1,5 @@
 ---
-title: 何为春节
+title: '何为春节'
 published: 2026-02-26T17:22:06.200Z
 updated: 2026-02-26T17:26:51.428Z
 description: ''
@@ -25,7 +25,7 @@ abbrlink: 'what-is-the-spring-festival'
 
 ---
 
-树树"红灯"<sup>[1]</sup>，
+树树“红灯“<sup>[1]</sup>，
 
 家家对联，
 
@@ -43,13 +43,13 @@ abbrlink: 'what-is-the-spring-festival'
 
 热闹不在，
 
-此为"春节"？
+此为“春节”？
 
 
 ---
 
 
-何为"春节"？
+何为“春节”？
 
 团聚一家，
 
@@ -58,4 +58,4 @@ abbrlink: 'what-is-the-spring-festival'
 此为春节。
 
 
-[1] : "红灯": 指树上会挂大红灯笼
+[1] : “红灯”: 指树上会挂大红灯笼

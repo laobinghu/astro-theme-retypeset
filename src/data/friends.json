@@ -1,0 +1,11 @@
+{
+  "friends": [
+    {
+      "name": "示例友链",
+      "url": "https://example.com",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=example",
+      "description": "这是一个示例友链，你可以替换为你自己的友链数据"
+    }
+  ],
+  "lastUpdated": "2026-07-17T00:00:00.000Z"
+}

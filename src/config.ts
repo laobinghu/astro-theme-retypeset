@@ -136,7 +136,7 @@ export const themeConfig: ThemeConfig = {
     umamiAnalyticsID: '',
     // follow verification
     // https://follow.is/
-    follow: {
+    folo: {
       // feed ID
       feedID: '',
       // user ID
@@ -171,7 +171,7 @@ export const themeConfig: ThemeConfig = {
   preload: {
     // image hosting url
     // optimize remote images in Markdown files to avoid cumulative layout shift
-    imageHostURL: 'cdn.647382.xyz',
+    imageHostURL: '',
     // custom google analytics js
     // for users who proxy tracking scripts to a custom domain
     // see https://gist.github.com/xiaopc/0602f06ca465d76bd9efd3dda9393738

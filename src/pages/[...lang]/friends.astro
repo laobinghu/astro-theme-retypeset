@@ -1,0 +1,273 @@
+---
+import { allLocales } from '@/config'
+import friendsData from '@/data/friends.json'
+import { getLangRouteParam } from '@/i18n/lang'
+import { ui } from '@/i18n/ui'
+import Layout from '@/layouts/Layout.astro'
+import { getPageInfo } from '@/utils/page'
+
+export async function getStaticPaths() {
+  return allLocales.map(lang => ({
+    params: { lang: getLangRouteParam(lang) },
+  }))
+}
+
+const { currentLang } = getPageInfo(Astro.url.pathname)
+const currentUI = ui[currentLang as keyof typeof ui] ?? {}
+
+// Try to fetch from EdgeOne Edge Function, fallback to local data
+let friends: Array<{
+  name: string
+  url: string
+  avatar: string
+  description: string
+}> = []
+
+try {
+  const apiUrl = 'https://eaverse-friends-api-x6qw3xnb.edgeone.cool/api/friends'
+  const response = await fetch(apiUrl, {
+    signal: AbortSignal.timeout(5000),
+  })
+
+  if (response.ok) {
+    const data = await response.json()
+    if (data.friends && Array.isArray(data.friends)) {
+      friends = data.friends.map((item: any) => ({
+        name: item.name || item.title || 'Unknown',
+        url: item.url || item.link || '#',
+        avatar: item.avatar || item.icon || `https://api.dicebear.com/7.x/avataaars/svg?seed=${item.name}`,
+        description: item.description || item.desc || '',
+      }))
+    }
+ else if (Array.isArray(data)) {
+      friends = data.map((item: any) => ({
+        name: item.name || item.title || 'Unknown',
+        url: item.url || item.link || '#',
+        avatar: item.avatar || item.icon || `https://api.dicebear.com/7.x/avataaars/svg?seed=${item.name}`,
+        description: item.description || item.desc || '',
+      }))
+    }
+  }
+}
+ catch {
+  // API 获取失败，使用本地数据
+}
+
+if (friends.length === 0) {
+  friends = friendsData.friends
+}
+
+// 便利贴颜色
+const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#fed7aa']
+---
+
+<Layout postTitle={currentUI.friends}>
+  <div class="uno-decorative-line" />
+  <div class="heti">
+    <h1 class="mb-8 text-2xl font-bold">{currentUI.friends}</h1>
+
+    <div class="friends-intro mb-8">
+      <p>以下是我的朋友们，如果你也想加入友链，请通过评论区或邮件联系我。</p>
+    </div>
+
+    <div class="friends-board">
+      {friends.map((friend, index) => (
+        <a
+          href={friend.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sticky-note"
+          style={`--rotate: ${(index % 5 - 2) * 2}deg; --color: ${stickyColors[index % stickyColors.length]}`}
+        >
+          <div class="sticky-pin"></div>
+          <div class="sticky-content">
+            <div class="sticky-avatar">
+              <img
+                src={friend.avatar}
+                alt={friend.name}
+                loading="lazy"
+                onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=default'"
+              />
+            </div>
+            <div class="sticky-name">{friend.name}</div>
+            {friend.description && (
+              <div class="sticky-desc">{friend.description}</div>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    {friends.length === 0 && (
+      <div class="friends-empty">
+        <p>暂无友链数据</p>
+      </div>
+    )}
+
+    <div class="friends-guide">
+      <h3>如何添加友链？</h3>
+      <p>编辑本地文件 <code>src/data/friends.json</code>，添加你的友链信息：</p>
+      <pre><code>{`{
+  "friends": [
+    {
+      "name": "朋友名称",
+      "url": "https://friend.com",
+      "avatar": "https://example.com/avatar.png",
+      "description": "朋友描述"
+    }
+  ]
+}`}</code></pre>
+      <p>或者使用 API 添加：</p>
+      <pre><code>{`curl -X POST https://eaverse-friends-api-x6qw3xnb.edgeone.cool/api/friends \\
+  -H "Content-Type: application/json" \\
+  -d '{"action":"add","friend":{"name":"新朋友","url":"https://new.com"}}'`}</code></pre>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .friends-intro {
+    color: var(--secondary);
+    font-size: 0.9375rem;
+  }
+
+  .friends-board {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+
+  .sticky-note {
+    width: 200px;
+    min-height: 180px;
+    padding: 1.5rem 1rem 1rem;
+    background: var(--color);
+    border-radius: 0 0 0 30px/45px;
+    box-shadow:
+      inset 0 -40px 40px rgba(0,0,0,0.02),
+      0 3px 12px rgba(0,0,0,0.1);
+    transform: rotate(var(--rotate));
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sticky-note:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow:
+      inset 0 -40px 40px rgba(0,0,0,0.02),
+      0 8px 25px rgba(0,0,0,0.15);
+    z-index: 10;
+  }
+
+  .sticky-pin {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 40% 40%, #ff6b6b, #ee5a24);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .sticky-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .sticky-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(0,0,0,0.1);
+  }
+
+  .sticky-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sticky-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1a1a1a;
+  }
+
+  .sticky-desc {
+    font-size: 0.8125rem;
+    color: #555;
+    line-height: 1.4;
+    max-height: 3.6em;
+    overflow: hidden;
+  }
+
+  .friends-empty {
+    text-align: center;
+    padding: 3rem;
+    color: var(--secondary);
+  }
+
+  .friends-guide {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--highlight);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .friends-guide h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    color: var(--primary);
+  }
+
+  .friends-guide p {
+    margin: 0.5rem 0;
+    color: var(--secondary);
+  }
+
+  .friends-guide code {
+    background: var(--background);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.8125em;
+  }
+
+  .friends-guide pre {
+    background: var(--background);
+    padding: 1rem;
+    border-radius: 0.375rem;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+  }
+
+  .friends-guide pre code {
+    background: none;
+    padding: 0;
+  }
+
+  @media (max-width: 640px) {
+    .friends-board {
+      gap: 1.5rem;
+    }
+
+    .sticky-note {
+      width: 160px;
+      min-height: 150px;
+      padding: 1.25rem 0.75rem 0.75rem;
+    }
+  }
+</style>

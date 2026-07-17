@@ -1,17 +1,18 @@
 ---
-date: 2026-01-03T07:11:38.002Z
-published: 2026-01-03
+title: '再读《命若琴弦》：把命吊着和长远目标'
+published: 2026-01-03T07:11:38.002Z
 updated: 2026-01-11T04:13:53.319Z
-title: 再读《命若琴弦》：把命吊着和长远目标
-slug: re-reading-fate-as-strings-tying-and-long-term-goals
-oid: 6958c12a1bbc6e14af97f79f
-categories: 说了什么
+description: ''
 tags:
   - 思考
   - 命若琴弦
+  - 读后感
   - 文学阅读
-type: post
-permalink: /posts/talk/re-reading-fate-as-strings-tying-and-long-term-goals
+draft: false
+pin: 0
+toc: true
+lang: ''
+abbrlink: 're-reading-fate-as-strings-tying-and-long-term-goals'
 ---
 
 

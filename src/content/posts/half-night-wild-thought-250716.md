@@ -1,19 +1,21 @@
 ---
-title: 半夜发癫-25/7/16
-published: 2025-07-16T14:45:56.182Z
-description: '东想西想,产生幻想'
-updated: ''
+title: '半夜发癫-25/7/16'
+published: 2025-07-16T06:45:56.000Z
+updated: 2026-01-02T17:00:21.683Z
+description: ''
 tags:
   - 半夜发癫
-  - 心理健康
+  - 胡思乱想
+  - 心理困惑
   - 自我怀疑
   - 疲惫感
 draft: false
 pin: 0
 toc: true
-lang: 'zh'
-abbrlink: 'half-night-wild-thought-250716'
+lang: ''
+abbrlink: 'half-night-wild-thought-250716-zh'
 ---
+
 
 又在胡思乱想了。
 

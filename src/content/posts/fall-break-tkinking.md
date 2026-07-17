@@ -1,22 +1,23 @@
 ---
 title: '所谓秋假：匆匆而来，空空而去'
-published: 2026-01-01T18:50:03.491Z
+published: 2026-01-01T10:50:03.000Z
+updated: 2026-01-02T17:00:01.925Z
 description: ''
-updated: ''
 tags:
   - 假期
   - 教育
   - 政策
   - 家庭
   - 学生生活
-  - 社会观察
+  - 社会现象
   - 评论
 draft: false
 pin: 0
 toc: true
 lang: ''
-abbrlink: 'fall-break-tkinking'
+abbrlink: 'fall-break-tkinking-zh'
 ---
+
 
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。  

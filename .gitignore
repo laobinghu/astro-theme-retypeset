@@ -28,3 +28,9 @@ pnpm-debug.log*
 
 src\version.json
 src/version.json
+
+# Tencent Cloud EdgeOne
+.env
+.edgeone/*
+.tef_dist/*
+  

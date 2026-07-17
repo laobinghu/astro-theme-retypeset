@@ -1,18 +1,21 @@
 ---
-title: 为什么人总会对过去有所执念
-published: 2025-09-27T11:47:47.729Z
-description: '因为人到底是恋旧的'
-updated: ''
+title: '为什么人总会对过去有所执念'
+published: 2025-09-27T03:47:47.000Z
+updated: 2026-01-02T17:02:47.496Z
+description: ''
 tags:
   - 回忆
+  - 执念
   - 人生
   - 思考
 draft: false
 pin: 0
 toc: true
-lang: 'zh'
-abbrlink: 'why-did-we-couldnt-foget-the-past'
+lang: ''
+abbrlink: 'why-did-we-couldnt-foget-the-past-zh'
 ---
+
+
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。
 > 如果有任何问题，请在评论区留言或等待作者人工校对。

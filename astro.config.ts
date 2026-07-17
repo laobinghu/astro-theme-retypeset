@@ -20,10 +20,11 @@ import { remarkLeafDirectives } from './src/plugins/remark-leaf-directives.mjs'
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
 
 const { url: site } = themeConfig.site
-const { imageHostURL } = themeConfig.preload ?? {}
-const imageConfig = imageHostURL
-  ? { image: { domains: [imageHostURL], remotePatterns: [{ protocol: 'https' }] } }
-  : {}
+const imageConfig = {
+  image: {
+    remotePatterns: [{ protocol: 'https' }],
+  },
+}
 
 export default defineConfig({
   site,

@@ -1,20 +1,20 @@
 ---
-date: 2026-01-05T03:56:20.611Z
-published: 2026-01-05
-updated: 2026-01-17T18:23:01.368Z
-title: 2025的劫后余生与2026的17岁生日
-slug: from-death-to-birth
-oid: 695b36641bbc6e14af980184
-categories: 说了什么
+title: '2025的劫后余生与2026的17岁生日'
+published: 2026-01-05T03:56:20.611Z
+updated: 2026-02-26T17:17:29.056Z
+description: ''
 tags:
   - 个人日常
   - 心情随笔
-  - 回忆
+  - 青春记忆
   - 学生生活
   - 年终总结
   - 生日
-type: post
-permalink: /posts/talk/from-death-to-birth
+draft: false
+pin: 0
+toc: true
+lang: ''
+abbrlink: 'from-death-to-birth'
 ---
 
 
@@ -67,4 +67,8 @@ permalink: /posts/talk/from-death-to-birth
 
 首先，“劫后余生”应该改为“生后余劫”更合适，因为前年还没爆发。但是“劫后余生”其实问题不大，因为我差不多九月份开始吃药，到十一月份基本控制住（所以我也不知道到底有没有病），说“劫后余生”不较真的话也没有太大问题。
 
-另外，我在文章的 Slug 中埋了点小巧思：**From death to birth**，死后新生，压了 181 的韵，和“劫后余生”勉强对得上。
+另外，我在文章的 Slug 中埋了点小巧思：**From death to birth**，死后新生，压了|θ|的韵，和“劫后余生”勉强对得上。不过这不重要，因为你基本看不到地址栏。
+
+由于时间限制（因为这篇文章是我用了整整一节自习写的，实际还没写完），有些内容被我省掉了，比如为什么中途换新站点，新域名，新称呼。如果有机会的话，以后再慢慢讲吧。
+
+（还有，本站的前端已经升级为 Shiroi 了，算是给自己的一点生日礼物了）

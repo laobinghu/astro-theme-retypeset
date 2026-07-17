@@ -1,24 +1,27 @@
 ---
-title: 半夜胡思-25/7/21
-published: 2025-07-21T01:51:52.288Z
-description: '东想西想,产生幻想'
-updated: ''
+title: '半夜胡思-25/7/21'
+published: 2025-07-20T17:51:52.000Z
+updated: 2026-01-02T17:01:02.151Z
+description: ''
 tags:
   - 半夜发癫
-  - 自我怀疑
-  - 教育
+  - 自我反思
+  - 恋旧情结
+  - 教育经历
   - 编程竞赛
   - 现实落差
   - 心理健康
   - 人生选择
-  - 回忆
+  - 青春记忆
   - 公共领域
 draft: false
 pin: 0
 toc: true
-lang: 'zh'
-abbrlink: 'half-night-wild-thought-250721'
+lang: ''
+abbrlink: 'half-night-wild-thought-250721-zh'
 ---
+
+
 ~~我就不应该三更半夜和别人聊天的~~
 
 最后发现是自己没法想别人一样接受现实而哈气的。

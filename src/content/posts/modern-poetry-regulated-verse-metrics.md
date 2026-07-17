@@ -1,5 +1,5 @@
 ---
-title: 谈现代诗与近体诗格律
+title: '谈现代诗与近体诗格律'
 published: 2026-04-18T17:41:16.649Z
 updated: 2026-04-18T17:54:54.616Z
 description: ''

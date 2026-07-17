@@ -2,7 +2,7 @@
 import { ui } from '@/i18n/ui'
 import { getPageInfo } from '@/utils/page'
 
-const { currentLang, isHome, isPost, isTag, isAbout, isNotes, isSelf, getLocalizedPath } = getPageInfo(Astro.url.pathname)
+const { currentLang, isHome, isPost, isTag, isAbout, isNotes, isFriends, getLocalizedPath } = getPageInfo(Astro.url.pathname)
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 
 const isPostActive = isHome || isPost
@@ -32,16 +32,9 @@ const navItems = [
     className: getNavItemClass(isTagActive),
   },
   {
-    href: 'https://mzmc-api.eaverse.top/friends',
+    href: '/friends/',
     label: currentUI.friends,
-    className: getNavItemClass(false),
-    target: '_blank',
-    rel: 'noopener noreferrer',
-  },
-  {
-    href: '/self-definition/',
-    label: currentUI.self,
-    className: getNavItemClass(isSelf),
+    className: getNavItemClass(isFriends),
   },
   {
     href: '/about/',

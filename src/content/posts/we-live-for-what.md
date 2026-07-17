@@ -1,20 +1,22 @@
 ---
-title: 我们为什么而活?
-published: 2025-09-27T11:47:05.417Z
-description: '读史铁生《命若琴弦》后悟'
-updated: ''
+title: '我们为什么而活?'
+published: 2025-09-27T03:47:05.000Z
+updated: 2026-01-02T17:02:30.897Z
+description: ''
 tags:
-  - 思考
+  - 人生思考
   - 史铁生
   - 命若琴弦
   - 生命意义
-  - 心理健康
+  - 抑郁
 draft: false
 pin: 0
 toc: true
-lang: 'zh'
-abbrlink: 'we-live-for-what'
+lang: ''
+abbrlink: 'we-live-for-what-zh'
 ---
+
+
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。
 > 如果有任何问题，请在评论区留言或等待作者人工校对。

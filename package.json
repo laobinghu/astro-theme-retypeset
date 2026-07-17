@@ -16,7 +16,9 @@
     "new-post": "tsx scripts/new-post.ts",
     "apply-lqip": "tsx scripts/apply-lqip.ts",
     "format-posts": "tsx scripts/format-posts.ts",
-    "update-theme": "tsx scripts/update-theme.ts"
+    "update-theme": "tsx scripts/update-theme.ts",
+    "sign": "bash scripts/verify-originality.sh",
+    "build:verified": "pnpm build && pnpm sign"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",

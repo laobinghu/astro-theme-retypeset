@@ -1,18 +1,19 @@
 ---
-title: 比赛背后
-published: 2026-01-01T19:01:22.690Z
-description: '小诗一首,借以抒情'
-updated: ''
+title: '比赛背后'
+published: 2026-01-01T11:01:22.000Z
+updated: 2026-01-02T16:59:08.855Z
+description: ''
 tags:
   - 诗歌
   - 对比
-  - 社会观察
+  - 社会现象
 draft: false
 pin: 0
 toc: true
 lang: ''
-abbrlink: 'after-race'
+abbrlink: 'after-race-zh'
 ---
+
 
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。

@@ -1,8 +1,8 @@
 ---
-title: 半夜发癫-25/7/20
-published: 2025-07-20T02:20:04.280Z
-description: '东想西想,产生幻想'
-updated: ''
+title: '半夜发癫-25/7/20'
+published: 2025-07-19T18:20:04.000Z
+updated: 2026-01-02T17:00:46.017Z
+description: ''
 tags:
   - 半夜发癫
   - 回忆
@@ -13,9 +13,10 @@ tags:
 draft: false
 pin: 0
 toc: true
-lang: 'zh'
-abbrlink: 'half-night-wild-thought-250720'
+lang: ''
+abbrlink: 'half-night-wild-thought-250720-zh'
 ---
+
 
 初中的时候，每次做 80 路去游仙，看到左边一幢大楼上书“绵阳中学英才学校”时，内心总会五味杂陈。
 

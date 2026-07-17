@@ -1,20 +1,22 @@
 ---
 title: '[浅出]连自保都做不到,你拿什么谈自立自强?'
-published: 2025-11-21T11:27:46.772Z
-description: '自立自强者,先自保也。'
-updated: ''
+published: 2025-11-21T03:27:46.000Z
+updated: 2026-01-02T17:02:14.264Z
+description: ''
 tags:
   - 青年
   - 自立自强
   - 自保能力
-  - 教育
+  - 教育反思
   - 社会观察
 draft: false
 pin: 0
 toc: true
-lang: 'zh'
-abbrlink: 'protection-profession-pride'
+lang: ''
+abbrlink: 'protection-profession-pride-zh'
 ---
+
+
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。  
 > 如果有任何问题，请在评论区留言或等待作者人工校对。

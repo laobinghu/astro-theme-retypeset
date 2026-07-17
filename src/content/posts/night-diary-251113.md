@@ -1,18 +1,22 @@
 ---
-title: 十一月十三日夜记
-published: 2025-11-21T11:32:21.022Z
-description: '坏事连篇，小生可有招？'
-updated: ''
+title: '十一月十三日夜记'
+published: 2025-11-21T03:32:21.000Z
+updated: 2026-01-02T17:01:55.013Z
+description: ''
 tags:
-  - 个人日常
+  - Note
+  - 日记
+  - 生活记录
   - 心情随笔
   - 学生生活
 draft: false
 pin: 0
 toc: true
-lang: 'zh'
-abbrlink: 'night-diary-251113'
+lang: ''
+abbrlink: 'night-diary-251113-zh'
 ---
+
+
 > [!TIP]
 > 由于本文章由图片直接识别得到，所以可能存在识别错误。  
 > 如果有任何问题，请在评论区留言或等待作者人工校对。

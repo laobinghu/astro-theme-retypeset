@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content'
 import { getCollection, render } from 'astro:content'
 import { allLocales } from '@/config'
 import { getLangRouteParam } from '@/i18n/lang'
-import Layout from '@/layouts/Layout.astro'
+import NotesLayout from '@/layouts/NotesLayout.astro'
 
 export async function getStaticPaths() {
   const notes: CollectionEntry<'notes'>[] = await getCollection('notes')
@@ -26,23 +26,57 @@ const { note } = Astro.props
 const { Content } = await render(note)
 ---
 
-<Layout postTitle={note.data.title}>
-  <article class="heti">
-    <h1>{note.data.title}</h1>
-    <div class="mb-8 c-secondary font-time text-sm">
-      <time>
-        {note.data.date.toLocaleDateString('zh-CN', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-          weekday: 'long',
-        })}
-      </time>
-      {note.data.mood && <span class="ml-4">心情: {note.data.mood}</span>}
-      {note.data.weather && <span class="ml-4">天气: {note.data.weather}</span>}
-    </div>
-    <div id="post-content">
+<NotesLayout currentNote={note}>
+  <article class="note-article" data-slug={note.data.slug}>
+    <header class="note-header">
+      <h1 class="note-title">{note.data.title}</h1>
+      <div class="note-meta">
+        <time>
+          {note.data.date.toLocaleDateString('zh-CN', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+          })}
+        </time>
+        {note.data.mood && <span>心情: {note.data.mood}</span>}
+        {note.data.weather && <span>天气: {note.data.weather}</span>}
+      </div>
+    </header>
+
+    <div class="note-content heti">
       <Content />
     </div>
   </article>
-</Layout>
+</NotesLayout>
+
+<style>
+  .note-article {
+    max-width: 100%;
+  }
+
+  .note-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--secondary);
+  }
+
+  .note-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.5rem 0;
+  }
+
+  .note-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--secondary);
+  }
+
+  .note-content {
+    line-height: 1.8;
+  }
+</style>

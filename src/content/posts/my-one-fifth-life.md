@@ -1,8 +1,8 @@
 ---
-title: 我的前1/5生
-published: 2025-07-14T14:17:21.920Z
-description: '这是一篇墓志铭，既是埋葬过去，也是逃避现实'
-updated: ''
+title: '我的前1/5生'
+published: 2025-07-14T06:17:21.000Z
+updated: 2026-01-02T17:01:28.854Z
+description: ''
 tags:
   - 思考
   - 墓志铭
@@ -10,9 +10,10 @@ tags:
 draft: false
 pin: 0
 toc: true
-lang: 'zh'
-abbrlink: 'my-one-fifth-life'
+lang: ''
+abbrlink: 'my-one-fifth-life-zh'
 ---
+
 
 我并非绵阳本地人。
 

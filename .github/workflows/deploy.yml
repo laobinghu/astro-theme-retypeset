@@ -1,0 +1,82 @@
+name: Build and Deploy with Originality Verification
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install OTS client
+        run: pip install opentimestamps-client
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      # === 原创验证：GPG 签名 + OTS 时间戳 ===
+
+      - name: Import GPG key
+        if: env.BLOG_GPG_PRIVATE_KEY != ''
+        env:
+          BLOG_GPG_PRIVATE_KEY: ${{ secrets.BLOG_GPG_PRIVATE_KEY }}
+        run: |
+          echo "$BLOG_GPG_PRIVATE_KEY" | base64 -d | gpg --batch --import
+          echo "trustlevel=5" | gpg --batch --import-ownertrust
+
+      - name: Sign and timestamp articles
+        if: env.BLOG_GPG_PRIVATE_KEY != ''
+        env:
+          BLOG_SIGNER_EMAIL: ${{ vars.BLOG_SIGNER_EMAIL || 'liuzihu@126.com' }}
+        run: bash scripts/verify-originality.sh
+
+      - name: Cleanup GPG key
+        if: always()
+        run: |
+          gpg --batch --yes --delete-secret-keys "$(gpg --list-secret-keys --keyid-format long | grep -oP '[A-F0-9]{16}' | head -1)" 2>/dev/null || true
+          gpg --batch --yes --delete-keys "$(gpg --list-keys --keyid-format long | grep -oP '[A-F0-9]{16}' | head -1)" 2>/dev/null || true
+
+      # === 部署（根据实际平台修改） ===
+
+      # Cloudflare Pages 部署示例：
+      # - name: Deploy to Cloudflare Pages
+      #   uses: cloudflare/wrangler-action@v3
+      #   with:
+      #     apiToken: ${{ secrets.CF_API_TOKEN }}
+      #     accountId: ${{ secrets.CF_ACCOUNT_ID }}
+      #     command: pages deploy dist --project-name=your-project
+
+      # Vercel 部署示例：
+      # - name: Deploy to Vercel
+      #   uses: amondnet/vercel-action@v25
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+      #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+      #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      # 静态文件部署（如 S3、自建服务器等）：
+      # - name: Upload to S3
+      #   run: |
+      #     aws s3 sync dist/ s3://your-bucket --delete

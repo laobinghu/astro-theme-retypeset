@@ -1,0 +1,60 @@
+---
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout>
+  <div class="uno-decorative-line" />
+  <div class="heti">
+    <h1>原创验证</h1>
+
+    <p>本站文章采用密码学签名与区块链时间戳技术，提供可公开验证的原创证明。</p>
+
+    <h2>验证原理</h2>
+    <p>每篇文章包含三层证明：</p>
+    <ol>
+      <li><strong>文章内容</strong>（HTML 文件）</li>
+      <li><strong>作者签名</strong>（.sig 文件）— 使用 GPG Ed25519 私钥签署</li>
+      <li><strong>区块链时间戳</strong>（.sig.ots 文件）— 通过 OpenTimestamps 锚定到比特币</li>
+    </ol>
+
+    <h2>验证步骤</h2>
+
+    <h3>前置准备</h3>
+    <p>安装所需工具：</p>
+    <pre><code># 安装 GnuPG（如未自带）
+# macOS: brew install gnupg
+# Ubuntu: sudo apt install gnupg
+
+# 安装 OTS 客户端
+pip install opentimestamps-client</code></pre>
+
+    <h3>第一步：验证时间戳</h3>
+    <p>下载文章对应的 <code>.sig.ots</code> 文件，运行：</p>
+    <pre><code>ots verify 文章名.html.sig.ots</code></pre>
+    <p>输出包含 <code>Success! Bitcoin attests data existed as of ...</code> 即表示时间戳有效。</p>
+
+    <h3>第二步：验证签名</h3>
+    <p>下载文章对应的 <code>.sig</code> 文件和公钥：</p>
+    <pre><code># 下载公钥
+curl -o signing-key.pub https://eaverse.top/.well-known/signing-key.pub
+
+# 导入公钥
+gpg --import signing-key.pub
+
+# 验证签名
+gpg --verify 文章名.html.sig 文章名.html</code></pre>
+    <p>输出 <code>Good signature from "laobinghu &lt;liuzihu@126.com&gt;"</code> 即表示签名有效。</p>
+
+    <h2>这意味着什么？</h2>
+    <p>两步验证均通过，则证明：</p>
+    <blockquote>
+      <p>在某个比特币区块时间之前，作者身份已签署了该文章内容。任何对文章的修改（哪怕一个字符）都会导致验证失败。</p>
+    </blockquote>
+
+    <h2>相关文件</h2>
+    <ul>
+      <li><a href="/.well-known/signing-key.pub">作者公钥</a></li>
+      <li><a href="https://github.com/radishzzz/astro-theme-retypeset">项目源码</a></li>
+    </ul>
+  </div>
+</Layout>
