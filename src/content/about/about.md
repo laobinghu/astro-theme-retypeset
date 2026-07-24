@@ -37,13 +37,13 @@ permalink: /about
 2025 年的那个暑假，我经历了一段很难熬的日子。那些夏天的黑暗至今不愿回忆。但好在，我抗下来了。
 
 > 他承受了所有的打击，将生的目标传给了"下一任"。
-> ——《我们为什么而活?》
+> ——《我们为什么而活？》
 
 # 关于名字
 
-烧瑚烙饼(laobinghu)、易曦维光(EaciWereGone)、易维Sky(EaverSky)，这些都是我，但用的最多的还是烧瑚烙饼(laobinghu)。
+烧瑚烙饼 (laobinghu)、易曦维光 (EaciWereGone)、易维 Sky(EaverSky)，这些都是我，但用的最多的还是烧瑚烙饼 (laobinghu)。
 
-易曦维光(EaciWereGone)、易维Sky(EaverSky)，包括原来的[一维宇宙Eaverse](https://eaverse.top)，都是那个特殊时期的产物，该放下，还是得放下。
+易曦维光 (EaciWereGone)、易维 Sky(EaverSky)，包括原来的 [一维宇宙 Eaverse](https://eaverse.top)，都是那个特殊时期的产物，该放下，还是得放下。
 
 至于烧瑚烙饼，纯粹就是没吃过烙饼，突发奇想，又因为名字里面带一个“瑚”字，于是便起了“烧糊烙饼”这个网名。现在的“烧瑚烙饼”大抵是初二的时候改的。
 
@@ -54,7 +54,7 @@ permalink: /about
 
 # 友链
 
-想交换友链？请移步[友链页面](/friends/)留言。
+想交换友链？请移步 [友链页面](/friends/) 留言。
 
 -----
 

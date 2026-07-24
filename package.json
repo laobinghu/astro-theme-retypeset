@@ -21,7 +21,8 @@
     "build:verified": "pnpm build && pnpm sign"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.3",
+    "@astrojs/markdown-remark": "^7.2.1",
+    "@astrojs/mdx": "^7.0.0",
     "@astrojs/partytown": "^2.1.6",
     "@astrojs/sitemap": "^3.7.2",
     "@waline/client": "^3.13.0",
@@ -71,9 +72,6 @@
     "unocss-preset-theme": "^0.14.1"
   },
   "pnpm": {
-    "patchedDependencies": {
-      "@qwik.dev/partytown@0.11.2": "patches/@qwik.dev__partytown@0.11.2.patch"
-    },
     "onlyBuiltDependencies": [
       "esbuild",
       "sharp",

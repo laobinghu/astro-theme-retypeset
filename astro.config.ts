@@ -1,3 +1,4 @@
+import { unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 // import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
@@ -23,6 +24,7 @@ const { url: site } = themeConfig.site
 const imageConfig = {
   image: {
     remotePatterns: [{ protocol: 'https' }],
+    service: { entrypoint: 'astro/assets/services/noop' },
   },
 }
 
@@ -62,6 +64,7 @@ export default defineConfig({
     }),
   ],
   markdown: {
+    processor: unified(),
     remarkPlugins: [
       remarkDirective,
       remarkMath,
