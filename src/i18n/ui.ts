@@ -123,9 +123,9 @@ export const ui: Record<Language, Translation> = {
     self: 'Самоопределение',
   },
   'zh': {
-    title: '一维宇宙Eaverse',
-    subtitle: '過去を終え、未来を開く',
-    description: '埋葬过去,逃避现实',
+    title: '烙饼的碎碎念',
+    subtitle: 'End the past, start the new.',
+    description: 'End the past, start the new.',
     posts: '文章',
     tags: '标签',
     about: '关于',

@@ -4,17 +4,17 @@ export const themeConfig: ThemeConfig = {
   // SITE INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> START
   site: {
     // site title
-    title: '一维宇宙Eaverse',
+    title: '烙饼的碎碎念',
     // site subtitle
-    subtitle: '過去を終え、未来を開く',
+    subtitle: 'End the past, start the new.',
     // site description
-    description: '埋葬过去,逃避现实',
+    description: 'End the past, start the new.',
     // use i18n title/subtitle/description from src/i18n/ui.ts instead of static ones above
     i18nTitle: true, // true | false
     // author name
-    author: '易曦维光EaciWereGone',
+    author: '烧瑚烙饼',
     // site url
-    url: 'https://eaverse.top',
+    url: 'https://blog.laobinghu.top',
     // base path
     // root directory for all pages and assets
     base: '/', // e.g., '/blog', '/docs'

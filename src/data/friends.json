@@ -1,11 +1,53 @@
 {
   "friends": [
     {
-      "name": "示例友链",
-      "url": "https://example.com",
-      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=example",
-      "description": "这是一个示例友链，你可以替换为你自己的友链数据"
+      "name": "博尔鲁文的个人博客",
+      "url": "https://blog.boen.fun/",
+      "avatar": "https://blog.boen.fun/wp-content/uploads/2024/09/%E4%B8%AA%E4%BA%BALOGO.png",
+      "description": "做自己喜欢的事，就是成功的开始。"
+    },
+    {
+      "name": "星澜曦光的探索",
+      "url": "https://blog.tsxc.xyz",
+      "avatar": "https://blog.tsxc.xyz/img/avatar.avif",
+      "description": "AFO，新的开始"
+    },
+    {
+      "name": "小奥のblog",
+      "url": "https://www.aokaoka.top/",
+      "avatar": "https://blog.aokaoka.top/img/AOKAOKA.jpg",
+      "description": "不经一事，不长一智"
+    },
+    {
+      "name": "知行间",
+      "url": "https://blog.xp6.top/",
+      "avatar": "https://blog.xp6.top/_next/image?url=https%3A%2F%2Fdl.xp6.top%2Fview.php%2Fdd18bd21e6f5495ff3313d9c110caa39.png&w=640&q=75",
+      "description": "知明而行无过矣"
+    },
+    {
+      "name": "朽丘博",
+      "url": "https://koxiuqiu.cn",
+      "avatar": "https://cdn.koxiuqiu.cn/koxiuqiu/img/favicon.webp",
+      "description": "一定会和喜欢的人在夏日夜晚牵手慢步"
+    },
+    {
+      "name": "张洪Heo",
+      "url": "https://blog.zhheo.com",
+      "avatar": "https://bu.dusays.com/2022/12/28/63ac2812183aa.png",
+      "description": "分享设计与科技生活"
+    },
+    {
+      "name": "Pinpe 的云端",
+      "url": "https://pinpe.top",
+      "avatar": "https://pinpe.top/head.jpg",
+      "description": "一个属于自己的云朵。"
+    },
+    {
+      "name": "杜老师说",
+      "url": "https://dusays.com",
+      "avatar": "https://cdn.dusays.com/avatar.png",
+      "description": "杜老师说"
     }
   ],
-  "lastUpdated": "2026-07-17T00:00:00.000Z"
+  "lastUpdated": "2026-07-25T00:00:00.000Z"
 }
