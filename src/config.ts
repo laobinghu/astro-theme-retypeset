@@ -87,7 +87,7 @@ export const themeConfig: ThemeConfig = {
     // twikoo
     // https://twikoo.js.org/
     twikoo: {
-      envId: 'https://comment.eaverse.top/.netlify/functions/twikoo',
+      envId: 'https://comment.laobinghu.top/.netlify/functions/twikoo',
       // version: frontend version can be changed in package.json
     },
     // waline
