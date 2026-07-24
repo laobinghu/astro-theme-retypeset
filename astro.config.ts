@@ -20,21 +20,6 @@ import { remarkContainerDirectives } from './src/plugins/remark-container-direct
 import { remarkLeafDirectives } from './src/plugins/remark-leaf-directives.mjs'
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
 
-// Configure unified processor with all plugins
-const markdownProcessor = unified()
-  .use(remarkDirective)
-  .use(remarkMath)
-  .use(remarkContainerDirectives)
-  .use(remarkLeafDirectives)
-  .use(remarkReadingTime)
-  .use(rehypeKatex)
-  .use(rehypeMermaid, { strategy: 'pre-mermaid' })
-  .use(rehypeSlug)
-  .use(rehypeHeadingAnchor)
-  .use(rehypeImageProcessor)
-  .use(rehypeExternalLinks)
-  .use(rehypeCodeCopyButton)
-
 const { url: site } = themeConfig.site
 const imageConfig = {
   image: {
@@ -79,7 +64,24 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    processor: markdownProcessor,
+    processor: unified({
+      remarkPlugins: [
+        remarkDirective,
+        remarkMath,
+        remarkContainerDirectives,
+        remarkLeafDirectives,
+        remarkReadingTime,
+      ],
+      rehypePlugins: [
+        rehypeKatex,
+        [rehypeMermaid, { strategy: 'pre-mermaid' }],
+        rehypeSlug,
+        rehypeHeadingAnchor,
+        rehypeImageProcessor,
+        rehypeExternalLinks,
+        rehypeCodeCopyButton,
+      ],
+    }),
     syntaxHighlight: {
       type: 'shiki',
       excludeLangs: ['mermaid'],
