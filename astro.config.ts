@@ -31,6 +31,7 @@ const imageConfig = {
 export default defineConfig({
   site,
   base,
+  compressHTML: true,
   trailingSlash: 'always', // Not recommended to change
   prefetch: {
     prefetchAll: true,
