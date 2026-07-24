@@ -36,7 +36,7 @@ const about = defineCollection({
 })
 
 const notes = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './markdown/notes' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/notes' }),
   schema: z.object({
     title: z.string(),
     date: z.date(),
@@ -51,18 +51,4 @@ const notes = defineCollection({
   }),
 })
 
-const pages = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './markdown/pages' }),
-  schema: z.object({
-    title: z.string(),
-    date: z.date(),
-    updated: z.preprocess(
-      val => val === '' ? undefined : val,
-      z.date().optional(),
-    ),
-    slug: z.string(),
-    subtitle: z.string().optional().default(''),
-  }),
-})
-
-export const collections = { posts, about, notes, pages }
+export const collections = { posts, about, notes }

@@ -1,8 +1,9 @@
 ---
-import { getCollection, render } from 'astro:content'
 import { allLocales } from '@/config'
 import { getLangRouteParam } from '@/i18n/lang'
+import { ui } from '@/i18n/ui'
 import Layout from '@/layouts/Layout.astro'
+import { getPageInfo } from '@/utils/page'
 
 export async function getStaticPaths() {
   return allLocales.map(lang => ({
@@ -10,14 +11,14 @@ export async function getStaticPaths() {
   }))
 }
 
-const allPages = await getCollection('pages')
-const pageEntry = allPages.find(p => p.data.slug === 'self-definition')
-const { Content } = pageEntry ? await render(pageEntry) : { Content: null }
+const { currentLang } = getPageInfo(Astro.url.pathname)
+const currentUI = ui[currentLang as keyof typeof ui] ?? {}
 ---
 
-<Layout postTitle={pageEntry?.data.title}>
+<Layout postTitle={currentUI.self}>
   <div class="uno-decorative-line" />
   <div class="heti">
-    {Content && <Content />}
+    <h1 class="mb-8 text-2xl font-bold">{currentUI.self}</h1>
+    <p>页面内容待补充</p>
   </div>
 </Layout>

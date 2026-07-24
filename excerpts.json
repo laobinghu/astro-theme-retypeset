@@ -1,0 +1,592 @@
+{
+  "data": [
+    {
+      "article": {
+        "id": "135290775322247176",
+        "title": "博客大搬家",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775687151621",
+          "hash": "cb21232cdce4688da3dcd6cc6c2dab5b",
+          "summary": "最近、ブログを hexo から mix space に変更した。そのせいで多くの記事の公開日時が変わってしまった。時間があるときにゆっくり直すつもり。以上、886。速報：記事の要約を ChatGPT に任せてみたら、うまくいかなかった。",
+          "ref_id": "135290775322247176",
+          "lang": "ja",
+          "created_at": "2026-04-29T02:27:05.610Z"
+        },
+        {
+          "id": "135290775687151619",
+          "hash": "cb21232cdce4688da3dcd6cc6c2dab5b",
+          "summary": "最近把博客从 Hexo 换成 Mix Space，因此很多文章的发布时间都变了，打算有空再慢慢调整。就这样，886。顺便小报：文章摘要提取这块儿，ChatGPT 好像整不过来。",
+          "ref_id": "135290775322247176",
+          "lang": "zh",
+          "created_at": "2026-04-29T02:26:44.394Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775322247178",
+        "title": "半夜杂谈",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775687151620",
+          "hash": "d13cd96fbd2f90941f5ee4505c628aea",
+          "summary": "这篇文章酝酿已久，作者描述开学以来的焦虑与自我怀疑。未来选择让他纠结：明年春季的中考报名、绵中与南山的取舍，担心在绵中发挥不佳掉二档，或在南山发挥超常却难越线。情感上也困惑：对班上第一（也是男生）有好感，又被同学称作男同，令他心理濒崩。人际关系不佳，常被欺负的阴影让他更愿缩回壳里。并怀疑自己是否网瘾，父母说有但症状不符，或现实无朋友只能寄望网络。夜里常独自哭泣。结尾以“话不投机半句多，话若投机万句少”点题。",
+          "ref_id": "135290775322247178",
+          "lang": "zh",
+          "created_at": "2026-04-29T02:26:57.182Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775322247170",
+        "title": "对联一副",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775687151618",
+          "hash": "dc1e399aff72227e8008e67f0b3982e4",
+          "summary": "这是一副源自班主任（语文老师）和数学老师口头禅的对联：上联“装疯迷窍笨得要死”，下联“恬不知耻老子晕死”，横批“鬼迷日眼”。这副对联写了很久，现在拿出来亮亮相罢。作者还自嘲说对IQ高达⑨的自己丝毫不是问题，瞧，这不就⑨个字吗，显现出自我调侃与嘲讽的语气。",
+          "ref_id": "135290775322247170",
+          "lang": "zh",
+          "created_at": "2026-04-29T02:26:31.913Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775322247175",
+        "title": "记录 2024 年第 33 天",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775687151617",
+          "hash": "2492cbc4ea4e39d416465f2be6bce58d",
+          "summary": "发现 CDN 关闭 HTTP/2 后访问速度明显变快；即便接入大陆 CDN，速度仍然慢，可能是 HTTP/2 的锅。顺带提到网站头像换了，使用了5年的头像终于退休。",
+          "ref_id": "135290775322247175",
+          "lang": "zh",
+          "created_at": "2026-04-29T02:26:22.876Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775322247168",
+        "title": "记录 2024 年第 180 天",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775687151616",
+          "hash": "1511426c36bb43526c4fe0380b24f637",
+          "summary": "作者自嘲地说自己八百年没写小作文，今天来凑字写一篇文章。",
+          "ref_id": "135290775322247168",
+          "lang": "zh",
+          "created_at": "2026-04-29T02:26:07.844Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775322247177",
+        "title": "记录 2024 年第 185 天",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957372",
+          "hash": "fca08607e711851a935f7378c2a0db98",
+          "summary": "恭喜！全站字符数突破两万，附后台数据图片，感谢大家的支持！( •̀ ω •́ )y",
+          "ref_id": "135290775322247177",
+          "lang": "zh",
+          "created_at": "2026-04-29T02:20:58.270Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775179640835",
+        "title": "半夜发癫-25/7/20",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957371",
+          "hash": "45405485e55df2244383a2f54028da6b",
+          "summary": "作者在初中时途经游仙，看到绵阳中学英才学校的牌匾，心情复杂。若当时考上，离梦想更近、升学率也更高；但现在看来，那个选择是对的。否则我的精神病不会是现在才有些苗头，而是在初中就爆发了。",
+          "ref_id": "135290775179640835",
+          "lang": "zh",
+          "created_at": "2026-04-29T02:19:09.810Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775322247179",
+        "title": "更新预告",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957370",
+          "hash": "a5525bb7e364c9bfa8954034d575964b",
+          "summary": "今日は少なくとも2本の記事を更新予定。いずれも約3ページ分の長文で、さらに以前の冬休みの4本の存稿もある。さらに、あなたが気づかない隅で、烙饼がほぼ4年前の記事を復活させた。",
+          "ref_id": "135290775322247179",
+          "lang": "ja",
+          "created_at": "2026-04-26T06:09:38.118Z"
+        },
+        {
+          "id": "135290775682957369",
+          "hash": "a5525bb7e364c9bfa8954034d575964b",
+          "summary": "Today I'll publish at least two long articles (each about three pages) and four drafts from the previous winter break. Also, in an obscure corner, Laobing resurrected a post from nearly four years ago.",
+          "ref_id": "135290775322247179",
+          "lang": "en",
+          "created_at": "2026-04-26T06:09:27.598Z"
+        },
+        {
+          "id": "135290775682957368",
+          "hash": "a5525bb7e364c9bfa8954034d575964b",
+          "summary": "今天至少更新两篇近三页的长文，另有寒假期间的四篇存稿；此外，烙饼在不知名的角落复活了一篇近四年前的文章。",
+          "ref_id": "135290775322247179",
+          "lang": "zh",
+          "created_at": "2026-04-26T06:09:21.274Z"
+        },
+        {
+          "id": "135290775682957367",
+          "hash": "84bb1caf190e23a99ed41de35f87af88",
+          "summary": "予告：今日は少なくとも2本の記事を更新します。いずれも約3ページ分の長文です。さらに、以前の冬休みの下書き4本も公開予定です。なお、あなたが知らない隅で、烙餅さんがほぼ4年前の記事を復活させました。",
+          "ref_id": "135290775322247179",
+          "lang": "ja",
+          "created_at": "2026-04-18T18:03:06.022Z"
+        },
+        {
+          "id": "135290775682957366",
+          "hash": "84bb1caf190e23a99ed41de35f87af88",
+          "summary": "Preview: Today I will publish at least two long articles, each nearly three pages, plus four drafts from the winter break. Also, somewhere you might not notice, Laobing has revived an article from almost four years ago.",
+          "ref_id": "135290775322247179",
+          "lang": "en",
+          "created_at": "2026-04-18T18:02:58.287Z"
+        },
+        {
+          "id": "135290775682957365",
+          "hash": "84bb1caf190e23a99ed41de35f87af88",
+          "summary": "预告称，今天至少更新两篇长文，每篇接近三页；另外还会发布寒假期间积累的四篇存稿。并且在你不知道的角落，烙饼复活了一篇差不多四年前的文章。",
+          "ref_id": "135290775322247179",
+          "lang": "zh",
+          "created_at": "2026-04-18T18:02:53.850Z"
+        },
+        {
+          "id": "135290775682957343",
+          "hash": "7d4cce3265493e838f2f4420b82836e2",
+          "summary": "予告：今日は少なくとも2本の記事を更新します。いずれも約3ページ分の長文で、さらに以前の冬休みの4本の草稿も公開予定です。",
+          "ref_id": "135290775322247179",
+          "lang": "ja",
+          "created_at": "2026-04-18T09:19:39.467Z"
+        },
+        {
+          "id": "135290775682957342",
+          "hash": "7d4cce3265493e838f2f4420b82836e2",
+          "summary": "Preview: Today I’ll post at least two long articles, each nearly three pages long, and I’ll also publish four drafts from the previous winter break.",
+          "ref_id": "135290775322247179",
+          "lang": "en",
+          "created_at": "2026-04-18T09:19:34.362Z"
+        },
+        {
+          "id": "135290775682957341",
+          "hash": "7d4cce3265493e838f2f4420b82836e2",
+          "summary": "预告：今天至少更新2篇长文（将近三页纸），另外还有之前寒假的4篇存稿。",
+          "ref_id": "135290775322247179",
+          "lang": "zh",
+          "created_at": "2026-04-18T09:19:30.037Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775179640846",
+        "title": "近况小结",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957364",
+          "hash": "23bb06820074c97c32dd4d4612534286",
+          "summary": "春天到来，作者回到校园，开启新征程。三月忙于作业与直播，尝试用AI写集中调度系统但未落地；分镜和培训虽早做，却因现场混乱失效。队伍人手不足，领导不干不安排，压力山大。运动会数据少，缺少评论互动，课上有学生情绪失控的事件被提及。四月月考，数学生物有进步，物理26分让人哭笑不得。结尾自问自答：我好想哭却哭不出，理性压制感性，感到无力与挫败。五月再见。",
+          "ref_id": "135290775179640846",
+          "lang": "zh",
+          "created_at": "2026-04-18T17:57:14.952Z"
+        },
+        {
+          "id": "135290775682957363",
+          "hash": "23bb06820074c97c32dd4d4612534286",
+          "summary": "春が来て、キャンパス生活が始まった。3月は宿題を最後まで引っ張り、AIを使った生放送の集中運用システムを作ろうとしたが、初期モデルは思うようでなく、後半は前後を自作で組み替えた。結果は半分しか機能せず、使えるものも限られた。20人超のチームは忙しく、実働は4人。指導部の対応に苛立ち、運動会の放送データはコメント機能がなくほぼゼロに。授業中のスマホ取り締まりで生徒が怒りを見せ、ある生徒は自傷を試みる事態に。4月の月考では数学・生物は進歩、英・化学は横ばい、物理は26点と自嘲。結局「泣きたいが泣けない」日々で、理性が感情を抑え続ける。五月へ。",
+          "ref_id": "135290775179640846",
+          "lang": "ja",
+          "created_at": "2026-04-18T17:57:04.734Z"
+        },
+        {
+          "id": "135290775682957362",
+          "hash": "23bb06820074c97c32dd4d4612534286",
+          "summary": "Long time no see. Spring comes as I return to campus and start a chapter. March: I procrastinate on holiday essays, yet dive into a livestream project for the school’s spring sports meet. I try to build a centralized live-broadcast scheduling system with AI: free models fail, I switch to Open Code, buy tokens, and rebuild with Next.js. To save time, features shrink, and what works is still only half of what I planned. The plan collapses; our crew is overextended—twenty-plus people, but only four can truly shoulder the load—and I’m a one-person front-to-back director, with three novices. A difficult supervisor ruins the atmosphere. The data is weak because there were no comments. There’s also a disturbing incident: a student threatened to jump after being pressured by teachers. April brings exams; math and biology improve, physics crashes to 26. I want to cry but can’t; rationality suppresses emotion. May, goodbye.",
+          "ref_id": "135290775179640846",
+          "lang": "en",
+          "created_at": "2026-04-18T17:56:49.671Z"
+        },
+        {
+          "id": "135290775682957346",
+          "hash": "67012ee939f8200aab2ec6c90c40b44d",
+          "summary": "春の訪れとともにキャンパスへ戻り、新しい挑戦を始めた筆者の近況。3月は語文の宿題を少しずつ出しつつ、学校の春季運動会の放送を任され、AIで集中調度システムを作ろうと試みた。無料モデルを試すも前端が思い通りでなく、後にOpen Codeと有料Tokenを使いNextJSで再構築。工期短縮のため機能は半分、実用性も半分。分鏡計画とトレーニング計画を前倒ししたが、結局運動会は活用できず、全体は混乱。データ不足は痛感。4月は月考を迎え、数学・生物は進歩、英語・化学は横ばい。物理は26点と低く、笑いながらもショック。理性と感情の葛藤が続く。五月、また会おう。",
+          "ref_id": "135290775179640846",
+          "lang": "ja",
+          "created_at": "2026-04-18T17:36:05.693Z"
+        },
+        {
+          "id": "135290775682957345",
+          "hash": "67012ee939f8200aab2ec6c90c40b44d",
+          "summary": "Spring has arrived; I’ve returned to campus and begun chapter. In March I rushed holiday Chinese essays, yet never posted them. I also attempted to build an AI-driven live-broadcast scheduler: started with free models, spent on tokens, and rewrote the frontend and backend with NextJS; results were a mess and half the planned features were cut. Despite early planning, neither the scheduling system nor the shot plan came together, turning efforts into a total waste. The year’s staff is stretched thin, and a difficult supervisor hovers over decisions; a disturbing incident during a school event involved a student threatening self-harm, which the author condemns. In April I entered exams: math and biology improved, English and chemistry steady, but physics exam a miserable 26. I’m asked if I’m optimistic. May, I tell myself I want to cry but cannot; I am good, yet rational restraint stifles emotion. May we meet again.",
+          "ref_id": "135290775179640846",
+          "lang": "en",
+          "created_at": "2026-04-18T17:35:49.079Z"
+        },
+        {
+          "id": "135290775682957344",
+          "hash": "67012ee939f8200aab2ec6c90c40b44d",
+          "summary": "春天到来，我回到校园，开启新征程。三月忙于假期作业与直播集中调度系统的开发，前后端折腾、计划多次被打乱，个人承担大量工作却收效甚微。运动会期间团队混乱、任务繁重，未能实现既定目标，数据也因未开评论而显著不足。四月初考，数学、生物有进步，英语、化学稳定，物理26分让我苦笑。小结里写下矛盾心情：想哭却哭不出，理性压制感性，我对理性的怨气与无奈。五月再见。",
+          "ref_id": "135290775179640846",
+          "lang": "zh",
+          "created_at": "2026-04-18T17:35:28.315Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775183835137",
+        "title": "一篇演讲稿——我的寒假",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957361",
+          "hash": "4809583ae35818e5da01b0151e608ca9",
+          "summary": "冬休みを通じて思考を深める著者は、馬伯庸の『長安の荔枝』を読み、李善徳の実直さと官僚制の皮肉を通して、現実と文学の関係を考察する。物語は安史の乱の前兆や宮廷内の争いを描き、現代の職場にも通じる風刺を示す。次に史鉄生の苦境と再生を取り上げ、逆境は英雄を生むが執念にとらわれる者は救われないと語る。さらに試験問題の理解と欣賞の進め方を解説し、内容を分解して感情を掴み、手法にも目を向けるという客観的解釈の重要性を説く。朱自清の『春』を例に欣賞の過程を説明。最後に現代詩の格律と自由の問題をめぐる議論を紹介し、記念か忘却かを問う課題と、継続的な練習と思考を促す言葉で締めくくる。",
+          "ref_id": "135290775183835137",
+          "lang": "ja",
+          "created_at": "2026-04-18T17:54:04.725Z"
+        },
+        {
+          "id": "135290775682957360",
+          "hash": "4809583ae35818e5da01b0151e608ca9",
+          "summary": "Hello everyone. During this month-long break I share reflections. First, I read Ma Boyong's Chang'an's Lychee, about Li Shande, a plain man who ferries lychees from Lingnan to please Yang Guifei—yet the feast never happens amid pre-An Lushan turmoil. The novel satirizes reality: bureaucratic dodges, resisting authorities, and futile approvals. Then I drew an image inspired by Shi Tiesheng: in his twenties he became paralyzed, yet his life and writing grew; adversity can forge heroes, but some are trapped by obsession. Next came study section on poetry understanding: objective questions ask for content without emotion; true understanding also reads emotion and technique. Appreciation means evaluating rhetoric, form, and language. We debated a modern poem's cadence: bound by form yet seeking liberation, and why removing three 'zhi' might help. Finally two prompts ask whether a line commemorates or forgets; the takeaway is to keep practicing, thinking, and writing. Thanks for listening.",
+          "ref_id": "135290775183835137",
+          "lang": "en",
+          "created_at": "2026-04-18T17:53:50.926Z"
+        },
+        {
+          "id": "135290775682957359",
+          "hash": "4809583ae35818e5da01b0151e608ca9",
+          "summary": "寒假既是休整也是学习的时机。我读了马伯庸的长安的荔枝，借李善德的老实人与运荔枝的故事，反思文学对现实的讽刺，以及官僚体制与职场的共性。作品背景在安史之乱前，作者通过细节批评现实问题。随后以画作表达对史铁生经历的思考：逆境可铸就英雄，亦有走不出执念而走向毁灭。其次是试题研究环节，强调理解要从内容入手，抓情感与手法的关系，并以欣赏为桥梁，类比诗句理解与修辞分析。再谈到一首现代诗：格律工整却被束缚，探讨解放之意义，及去掉三个之的讨论。最后提出两个写作与解读问题，并鼓励同学多练、多思、多写，学习不断。",
+          "ref_id": "135290775183835137",
+          "lang": "zh",
+          "created_at": "2026-04-18T17:53:17.805Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775183835136",
+        "title": "无题打油诗",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957358",
+          "hash": "eaedda8ee909fb864e029ce4b884130d",
+          "summary": "日が沈むと鞄を開け、宿題は一筆も進んでいない。焦りと不安に手は震え、油性のペンを握り、答えを必死に写す。国語・数学・英語・物理・化学・生物を前に、出題者と徹夜する人を恐れる。一筆と灯り、一夜の奇跡を夢む。しかし朝が来ると、それは黄粱の夢だったと気づく。改めて鞄を開くと、宿題は未完成のままだ。",
+          "ref_id": "135290775183835136",
+          "lang": "ja",
+          "created_at": "2026-04-18T17:48:53.836Z"
+        },
+        {
+          "id": "135290775682957357",
+          "hash": "eaedda8ee909fb864e029ce4b884130d",
+          "summary": "As night falls, I rummage my backpack and find no homework done. Panic sets in as my unfamiliar hands clutch an oiled pen and the answers, while I fear the examiner and the night-owl who toils late: one pen, one lamp, one night, a miracle. When dawn comes, I realize it was a Yellow Millet Dream, and upon opening the bag, the homework remains untouched.",
+          "ref_id": "135290775183835136",
+          "lang": "en",
+          "created_at": "2026-04-18T17:48:41.864Z"
+        },
+        {
+          "id": "135290775682957356",
+          "hash": "eaedda8ee909fb864e029ce4b884130d",
+          "summary": "作者放学后打开书包，发现作业一笔未动，惊慌失措，手生、拿着发油的笔、捧着答案，僵硬地抄着。面对语文、数学、英语、物理、化学、生物，害怕出题的人、害怕挑灯夜战的人。一支笔、一盏灯、一个夜晚，似乎在等待奇迹。天亮醒来，原来是一场黄粱梦，作业依旧没动。",
+          "ref_id": "135290775183835136",
+          "lang": "zh",
+          "created_at": "2026-04-18T17:48:29.541Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775179640849",
+        "title": "观AI吟味诗有感而作",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957355",
+          "hash": "e5bfb9166e10ee52a7ab8b25ed835b83",
+          "summary": "なぜAIが書く文章には人情味が欠けるのか。朝詩を暗唱し、昼に語を、夜に曲を暗唱し続ければAI風の文章も書けるようになる、という考えを示す。一方、人工知能は材料を再加工する機械に過ぎない。人間は知性だけでなく、生活の中で培われた感情を持つからこそ特有の価値を生み出す。",
+          "ref_id": "135290775179640849",
+          "lang": "ja",
+          "created_at": "2026-04-18T17:46:33.749Z"
+        },
+        {
+          "id": "135290775682957354",
+          "hash": "e5bfb9166e10ee52a7ab8b25ed835b83",
+          "summary": "Why do AI-written articles feel devoid of humanity? If you practice daily, reciting poetry in the morning, memorizing phrases at noon, and rehearsing melodies at night, you might eventually produce AI-flavored prose. AI is ultimately a machine that can rework material. Humans are not only intelligent; we are human, and our life-gained emotions set us apart.",
+          "ref_id": "135290775179640849",
+          "lang": "en",
+          "created_at": "2026-04-18T17:46:24.626Z"
+        },
+        {
+          "id": "135290775682957353",
+          "hash": "e5bfb9166e10ee52a7ab8b25ed835b83",
+          "summary": "本文质问人工智能写作为何缺乏人情味，认为若长期练习背诗背词背曲，也可能写出带有AI味道的文章。核心在于：AI只是对材料再加工的机器；人类之所以不同、不仅仅是智能，是因为我们来自生活、拥有情感，因此具备独特的人性与智慧。",
+          "ref_id": "135290775179640849",
+          "lang": "zh",
+          "created_at": "2026-04-18T17:46:16.463Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775179640848",
+        "title": "为什么你会觉得运气差？",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957352",
+          "hash": "b9eeb1c0ba703d257ff54fedea6cf6db",
+          "summary": "運が悪いと感じるとき、それは必ずしも運のせいだけではなく、心の状態が現実の見え方を左右する心理原理がある。『期待しないと悪いことが起こりやすい』という感覚を例え話で伝え、最初の不運の後は何も起きないことを願い、二度目・三度目と連鎖して起きるように感じてしまう。運ははっきりとつかみにくく、悪いことは避け難いが、それを減らすにはできるだけ良い気分でいるのが有効だ、という結論。",
+          "ref_id": "135290775179640848",
+          "lang": "ja",
+          "created_at": "2026-04-18T17:43:14.676Z"
+        },
+        {
+          "id": "135290775682957351",
+          "hash": "b9eeb1c0ba703d257ff54fedea6cf6db",
+          "summary": "Friend, do you ever feel you have bad luck, with several misfortunes piling up? This is normal, and not about luck itself. There’s a psychological principle: the less you expect something, the more likely it is to happen. The author even jokingly invokes the Pythagorean triple to illustrate. So we infer a chain: after the first bad thing, you hope nothing else happens; after the second, you think your luck is bad and the chance of a third seems small; yet a third misfortune often follows. Luck is elusive and bad events are almost inevitable, but we can reduce their probability by keeping a good mood.",
+          "ref_id": "135290775179640848",
+          "lang": "en",
+          "created_at": "2026-04-18T17:43:06.994Z"
+        },
+        {
+          "id": "135290775682957350",
+          "hash": "b9eeb1c0ba703d257ff54fedea6cf6db",
+          "summary": "文章用日常例子解释‘不期望的事情更容易发生’这一心理原理，指出坏事似乎会连锁出现，与运气无关。通过花笑、草哭的比喻，说明心情会影响我们看到的事物。人们在第一件坏事发生时往往不在意，第二件来临时就觉得运气不好，第三件便可能随之发生。坏事看似不可避免，气运若有若无。结论是应尽量降低坏事的概率，办法是保持好心情，以影响心态和感知。",
+          "ref_id": "135290775179640848",
+          "lang": "zh",
+          "created_at": "2026-04-18T17:42:59.244Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775179640847",
+        "title": "谈现代诗与近体诗格律",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957349",
+          "hash": "21df3f124e2f09536a072143600315f0",
+          "summary": "著者は誤解を避けるため、まず“格律”を説明する。格は形式、律は韻律。近体詩と古体詩の違いは、近体詩が唐代に成立した律詩・絶句の体系で、格式と韻律が厳格なこと。絶句は四句（五言・七言）、律詩は八句。現代詩は近現代以降の白話詩で、格式や韻を必須とせず“自由”だ。北島の「生活」は一字の「网」で構成される詩として挙げられ、太阳城札记の抜粋。全体が一、二語の詩も多い。現代詩が流行するのは、読みやすさと自由さのため。近体詩は白居易の代表例は理解しやすいが難解になることも多く、現代詩は思考のヒントや引用で成り立つ。白话詩にも格・韻が求められれば、それは八股文と何が違うのか？",
+          "ref_id": "135290775179640847",
+          "lang": "ja",
+          "created_at": "2026-04-18T17:41:52.538Z"
+        },
+        {
+          "id": "135290775682957348",
+          "hash": "21df3f124e2f09536a072143600315f0",
+          "summary": "To avoid ambiguity, I first explain my 'prosody': 'grid' (format) and 'meter' (rhythm). Near-verse vs ancient forms: the Tang-dynasty regulated verse and jueju—four lines, with five- or seven-character lines—and eight-line regulated verse. Modern poetry means vernacular poetry from the late imperial era to today, notable for no fixed form or required rhyme. As Doubao says, it is 'very free, write what you want.' Some argue Bei Dao's 'Life' is nonsense, but it's from 《太阳城札记》, whose pieces are a word or two, yet still poetry. Modern poetry is popular because it is free: near-form poetry is like dancing under a 'shackle'; modern poetry breaks the shackles and dances freely. If vernacular verse must also chase format and rhyme, how is it different from eight-legged essay?",
+          "ref_id": "135290775179640847",
+          "lang": "en",
+          "created_at": "2026-04-18T17:41:41.477Z"
+        },
+        {
+          "id": "135290775682957347",
+          "hash": "21df3f124e2f09536a072143600315f0",
+          "summary": "本文首先解释格律：格是格式，律是韵律。近体诗与古体诗的区别在于唐代初成的律诗、绝句体系的存在，其特点是格式严格、韵律规整。绝句四句，分五言与七言；律诗八句。现代诗指近现代至今的白话诗，最大的特点是无格式、无定韵，极其自由。以北岛的《生活》为例，虽被质疑，但据说出自《太阳城札记》节选，原文多为一两句甚至几个字。现代诗流行不仅因为易读易写，更因为自由。近体诗像戴着枷锁，现代诗则在天地间自由起舞。若白话诗也要讲格式、韵脚，它与八股文有何区别？",
+          "ref_id": "135290775179640847",
+          "lang": "zh",
+          "created_at": "2026-04-18T17:41:29.590Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775179640845",
+        "title": "何为春节",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957340",
+          "hash": "6bbf657d67a3bc189d9adf71bd7fc41b",
+          "summary": "本文通过对节令与景象的对比，探讨“春节”的真实含义。它将春节界定为立春后至春分前、寒假之间的时段，并以红灯、对联、娃娃嬉笑来象征节日气氛；但若鞭炮不响、热闹不在，春节究竟还在吗？作者指出，春节的核心是家人团聚、彼此陪伴，红灯只是表象。",
+          "ref_id": "135290775179640845",
+          "lang": "zh",
+          "created_at": "2026-02-26T17:27:02.712Z"
+        },
+        {
+          "id": "135290775682957339",
+          "hash": "4474602c9ba419494a8066bc4aeb5b18",
+          "summary": "通过对春令与习俗的并置，作者提出春节不仅是热闹的表象。立春之后、春分之间、寒假之间构成春节的时空背景；树上的红灯、家家对联、娃娃嬉笑描绘节日景象。若鞭炮不响、热闹不在，是否就不是春节？答案在于本质：春节是家人团聚、彼此陪伴的时刻。",
+          "ref_id": "135290775179640845",
+          "lang": "zh",
+          "created_at": "2026-02-26T17:26:35.719Z"
+        },
+        {
+          "id": "135290775682957338",
+          "hash": "599a73690e2378429a0b7b0d8fa51e76",
+          "summary": "文本通过对比式表达，揭示春节的本质并非热闹表象，而是家人团聚与相互陪伴。尽管鞭炮不响、热闹不在，红灯、对联与孩童笑声仍象征春节，核心是一家人相聚共处的时刻。",
+          "ref_id": "135290775179640845",
+          "lang": "zh",
+          "created_at": "2026-02-26T17:25:28.088Z"
+        },
+        {
+          "id": "135290775682957337",
+          "hash": "0bd994db238207a5ab3d21116a3ac948",
+          "summary": "文本以诗意提问的方式探讨春节的本质。它以时间段划分（立春后至春分前、寒假之间）指向春节；随后描绘红灯、对联、娃娃嬉笑，象征热闹景象。作者又问鞭炮不响、热闹不在是否仍是春节，进而回答：何为“春节”？答案是团聚一家、陪伴你我，这才是春节的核心。",
+          "ref_id": "135290775179640845",
+          "lang": "zh",
+          "created_at": "2026-02-26T17:24:19.293Z"
+        },
+        {
+          "id": "135290775682957336",
+          "hash": "0a2b547045676185a9ddc976d354565b",
+          "summary": "本文以立春至春分及寒假之间的时序描绘春节：树上挂着大红灯笼、家家对联、娃娃嬉笑，象征性的景象构成节日。可是若鞭炮不响、热闹缺席，春节是否就不在？作者点出答案：真正的春节在于团聚与陪伴，家人相聚的情感才是节日的核心。",
+          "ref_id": "135290775179640845",
+          "lang": "zh",
+          "created_at": "2026-02-26T17:23:50.796Z"
+        },
+        {
+          "id": "135290775682957335",
+          "hash": "6e9d6ea464dd4b768033412f8c7070a7",
+          "summary": "文本以立春至春分、寒假期间的场景揭示春节：树上的红灯、对联、娃娃嬉笑，凸显热闹景象。但文中质问为何热闹就等于春节，强调真正的春节在于家人团聚、彼此陪伴。于是提出春节的核心在于共同相处、陪伴你我。注释说明“红灯”指树上挂着的大红灯笼。",
+          "ref_id": "135290775179640845",
+          "lang": "zh",
+          "created_at": "2026-02-26T17:22:15.798Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775179640844",
+        "title": "2025的劫后余生与2026的17岁生日",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957334",
+          "hash": "4c5d137aa1f14a2842082dcdb6aef2e7",
+          "summary": "本文回顾2025年的低谷与重生，称那年最难回忆，夏天尤甚，仿佛与过去隔绝。前半年仅有三件事值得记：16岁完成备案、成为校MC服务器管理员，以及参与校园直播。随后情绪崩塌，出现抑郁迹象，经历药物治疗与心理咨询，在母亲陪同下逐步缓和。作者引用刘慈欣“历史教训来自亲历”，强调经历过才懂得。今以劫后余生为题，愿向前看，迎接2026年的17岁生日。文末提及对记忆的思考、站点改名等细节，以及From death to birth的小巧思。",
+          "ref_id": "135290775179640844",
+          "lang": "zh",
+          "created_at": "2026-02-26T17:17:47.973Z"
+        },
+        {
+          "id": "135290775682957332",
+          "hash": "ba95b66e9945bfc04403fa09ed0df33d",
+          "summary": "文章回顾了作者2025年的生活经历，特别是面对困难和情绪低落的过程。作者描述了重要的事件，如备案、学校活动、直播，以及情感上的压抑与爆发。最终，作者通过求助和治疗逐渐走出阴影，表达了对未来的希望与反思。",
+          "ref_id": "135290775179640844",
+          "lang": "zh",
+          "created_at": "2026-01-17T18:23:15.334Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775179640836",
+        "title": "半夜胡思-25/7/21",
+        "type": "post"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957333",
+          "hash": "01a8c3aa9bf09cdb9505bbf395375762",
+          "summary": "作者自觉恋旧，难以接受现实与过去的差异，曾经优秀但如今落魄，羡慕人气与认可，渴望被人服从与被关注，却难以实现，导致理想与现实之间的巨大差距。通过早期接触电脑、Scratch创作获奖等尝试自我提升，但数学薄弱、未能进入心仪的YC/信奥班。初中曾有突破，高中却不如意，班级排名靠后。为应对情感负担，尝试断舍离及把记忆分成过去与现在，甚至将往日文章放入公共领域以告别过去。愿在未来继续努力，给自己新的光亮。",
+          "ref_id": "135290775179640836",
+          "lang": "zh",
+          "created_at": "2026-02-22T15:21:34.536Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775322247173",
+        "title": "记录 2024 年第 238 天",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957331",
+          "hash": "50b359de57a20f7b80be1c81714ab072",
+          "summary": "文章描述了开学的情景，可能涉及学生的心情、老师的准备和校园的变化，展现了新学期的开始带来的期待与新鲜感。",
+          "ref_id": "135290775322247173",
+          "lang": "zh",
+          "created_at": "2026-01-10T14:22:54.420Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775322247171",
+        "title": "记录 2025 年第 21 天",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957330",
+          "hash": "85ec4760fef2d5fa4a594c73c5360f10",
+          "summary": "作者决定重新使用mx和shiro，作为庆祝人生第一次备案的方式。",
+          "ref_id": "135290775322247171",
+          "lang": "zh",
+          "created_at": "2026-01-10T14:22:51.049Z"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "135290775322247172",
+        "title": "半夜杂谈一年后",
+        "type": "note"
+      },
+      "summaries": [
+        {
+          "id": "135290775682957329",
+          "hash": "ad458e2c83c5a4c4701fb9c9382a5c77",
+          "summary": "作者回顾过去一年，成功考上绵中，但也反思人生的不如意。考试中他作为组长，体育满分，但未能让全组满分。中考结果显示，虽然考上绵中，但并非所有朋友都如愿，人生如河流，顺畅与否各异，感慨人与人之间的喜悲难以共通。",
+          "ref_id": "135290775322247172",
+          "lang": "zh",
+          "created_at": "2026-01-10T14:22:46.399Z"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "size": 20,
+      "total": 35,
+      "total_pages": 2
+    }
+  }
+}

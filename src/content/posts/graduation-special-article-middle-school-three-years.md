@@ -2,7 +2,7 @@
 title: '毕业特刊 - 初中三年，就是一场闹剧'
 published: 2024-06-17T00:30:03.000Z
 updated: 2026-01-05T03:51:03.064Z
-description: ''
+description: '中考后回望初中三年：从被孤立的外地生到考上绵中，人缘、学习、友谊的坎坷历程，以一场游园活动草草收尾的青春。'
 tags: []
 draft: false
 pin: 0

@@ -2,7 +2,7 @@
 title: '观AI吟味诗有感而作'
 published: 2026-04-18T17:46:10.753Z
 updated: 2026-04-18T17:55:44.881Z
-description: ''
+description: '本文质问人工智能写作为何缺乏人情味，认为AI只是对材料再加工的机器；人类之所以不同，是因为我们来自生活、拥有情感，因此具备独特的人性与智慧。'
 tags:
   - 诗歌
 draft: false
