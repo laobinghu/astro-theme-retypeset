@@ -12,6 +12,9 @@ import { themeConfig } from './src/config.ts'
 const { light, dark } = themeConfig.color
 
 export default defineConfig({
+  content: {
+    filesystem: ['src/**/*.{astro,html,md,mdx}'],
+  },
   presets: [
     presetWind3(),
     presetAttributify(),

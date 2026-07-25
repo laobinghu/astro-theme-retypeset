@@ -89,3 +89,49 @@ html.dark .code-copy-button.copied {
 .code-copy-button.copied .icon-check {
   --at-apply: 'op-100';
 }
+
+/* Desktop layout is explicit because Astro 7 no longer emits responsive UnoCSS
+   rules from the project's attributify syntax. */
+@media (min-width: 1024px) {
+  .site-container {
+    margin-left: max(5.75rem, calc(50vw - 34.25rem));
+    margin-right: 0;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    max-width: min(calc(75vw - 16rem), 44rem);
+    min-height: 100%;
+    padding: 0;
+  }
+
+  .site-header {
+    position: fixed;
+    right: max(5rem, calc(50vw - 35rem));
+    width: 14rem;
+    top: 5rem;
+  }
+
+  .site-navigation {
+    position: fixed;
+    right: max(5rem, calc(50vw - 35rem));
+    width: 14rem;
+    bottom: min(9.04rem + 3.85vw, 12.5rem);
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .site-footer {
+    position: fixed;
+    right: max(5rem, calc(50vw - 35rem));
+    width: 14rem;
+    bottom: 4rem;
+    font-size: 0.875rem;
+  }
+
+  .site-actions {
+    position: fixed;
+    right: max(5rem, calc(50vw - 35rem));
+    bottom: min(10.27rem + 1.92vw, 12rem);
+    top: auto;
+    width: 14rem;
+  }
+}
