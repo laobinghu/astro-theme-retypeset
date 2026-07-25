@@ -42,7 +42,7 @@ async function getMarkdownFiles(): Promise<string[]> {
 }
 
 // Format a single Markdown file
-async function formatSingleFile(filePath: string): Promise<boolean> {
+async function formatSingleFile(filePath: string, checkOnly: boolean): Promise<boolean> {
   const content = await readFile(filePath, 'utf8')
   const { frontmatter, body, hasFrontmatter } = splitContent(content)
 
@@ -57,18 +57,23 @@ async function formatSingleFile(filePath: string): Promise<boolean> {
   }
 
   // Write updated content to file
-  await writeFile(filePath, newContent, 'utf8')
-  console.log(`✅ ${filePath}`)
+  if (checkOnly) {
+    console.log(`⚠️ ${filePath}`)
+  }
+  else {
+    await writeFile(filePath, newContent, 'utf8')
+    console.log(`✅ ${filePath}`)
+  }
   return true
 }
 
 // Report formatting results
-function reportResults(changedCount: number, errorCount: number) {
+function reportResults(changedCount: number, errorCount: number, checkOnly: boolean) {
   if (changedCount === 0) {
     console.log('✅ Check complete, no files needed formatting changes')
   }
   else {
-    console.log(`✨ Formatted ${changedCount} files successfully`)
+    console.log(checkOnly ? `⚠️ ${changedCount} files need formatting` : `✨ Formatted ${changedCount} files successfully`)
   }
 
   if (errorCount > 0) {
@@ -78,6 +83,7 @@ function reportResults(changedCount: number, errorCount: number) {
 
 // Main function to format all Markdown files
 async function formatMarkdownFiles(): Promise<void> {
+  const checkOnly = process.argv.includes('--check')
   const files = await getMarkdownFiles()
 
   let changedCount = 0
@@ -85,7 +91,7 @@ async function formatMarkdownFiles(): Promise<void> {
 
   for (const file of files) {
     try {
-      const wasChanged = await formatSingleFile(file)
+      const wasChanged = await formatSingleFile(file, checkOnly)
       if (wasChanged) {
         changedCount++
       }
@@ -96,7 +102,10 @@ async function formatMarkdownFiles(): Promise<void> {
     }
   }
 
-  reportResults(changedCount, errorCount)
+  reportResults(changedCount, errorCount, checkOnly)
+  if (checkOnly && (changedCount > 0 || errorCount > 0)) {
+    process.exitCode = 1
+  }
 }
 
 formatMarkdownFiles().catch((error) => {

@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
@@ -19,7 +20,7 @@ import { remarkContainerDirectives } from './src/plugins/remark-container-direct
 import { remarkLeafDirectives } from './src/plugins/remark-leaf-directives.mjs'
 import { remarkReadingTime } from './src/plugins/remark-reading-time.mjs'
 
-const { url: site } = themeConfig.site
+const site = process.env.SITE_URL || process.env.PUBLIC_SITE_URL || themeConfig.site.url
 const imageConfig = {
   image: {
     remotePatterns: [{ protocol: 'https' }],
