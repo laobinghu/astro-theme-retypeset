@@ -15,47 +15,18 @@ export async function getStaticPaths() {
 
 const { currentLang } = getPageInfo(Astro.url.pathname)
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
-
-// Use local data first, fallback to EdgeOne API
-let friends: Array<{
+const friendsCopy = currentUI.friendsPage ?? ui.zh.friendsPage!
+const friends: Array<{
   name: string
   url: string
   avatar: string
   description: string
 }> = friendsData.friends || []
-
-// If local data is empty, try fetching from EdgeOne Edge Function
-if (friends.length === 0) {
-  try {
-    const apiUrl = 'https://eaverse-friends-api-x6qw3xnb.edgeone.cool/api/friends'
-    const response = await fetch(apiUrl, {
-      signal: AbortSignal.timeout(5000),
-    })
-
-    if (response.ok) {
-      const data = await response.json()
-      if (data.friends && Array.isArray(data.friends)) {
-        friends = data.friends.map((item: any) => ({
-          name: item.name || item.title || 'Unknown',
-          url: item.url || item.link || '#',
-          avatar: item.avatar || item.icon || `https://api.dicebear.com/7.x/avataaars/svg?seed=${item.name}`,
-          description: item.description || item.desc || '',
-        }))
-      }
-      else if (Array.isArray(data)) {
-        friends = data.map((item: any) => ({
-          name: item.name || item.title || 'Unknown',
-          url: item.url || item.link || '#',
-          avatar: item.avatar || item.icon || `https://api.dicebear.com/7.x/avataaars/svg?seed=${item.name}`,
-          description: item.description || item.desc || '',
-        }))
-      }
-    }
-  }
-  catch {
-    // API 获取失败，使用本地数据
-  }
-}
+const updatedDate = new Date(friendsData.lastUpdated).toLocaleDateString(currentLang, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
 
 // 便利贴颜色
 const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#fed7aa']
@@ -67,7 +38,12 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     <h1 class="friends-title">{currentUI.friends}</h1>
 
     <div class="friends-intro">
-      <p>以下是我的朋友们。如果你想交换友链，请在下方评论区留言，告诉我你的博客信息。</p>
+      <p>{friendsCopy.intro}</p>
+      <p class="friends-meta">
+        {friendsCopy.count.replace('{count}', String(friends.length))}
+        <span aria-hidden="true"> · </span>
+        {friendsCopy.updated.replace('{date}', updatedDate)}
+      </p>
     </div>
 
     <div class="friends-board" role="list">
@@ -87,7 +63,6 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
                 src={friend.avatar}
                 alt={friend.name}
                 loading="lazy"
-                onerror="this.onerror=null;this.src='/icons/friend-placeholder.svg'"
               />
             </div>
             <div class="sticky-name">{friend.name}</div>
@@ -101,19 +76,142 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
 
     {friends.length === 0 && (
       <div class="friends-empty">
-        <p>暂无友链数据</p>
+        <p>{friendsCopy.empty}</p>
       </div>
     )}
 
-    <div class="friends-comment">
-      <h3>交换友链</h3>
+    <div class="friends-application">
+      <h2>{friendsCopy.applicationTitle}</h2>
       <p class="friends-comment-desc">
-        如果你想交换友链，请在评论区留下你的博客名称、链接、头像和描述，我会尽快审核添加。
+        {friendsCopy.applicationDescription}
       </p>
+      <form class="friends-form" id="friend-application-form" novalidate>
+        <label>
+          <span>{friendsCopy.nameLabel}</span>
+          <input name="name" type="text" required maxlength="80" placeholder={friendsCopy.namePlaceholder} />
+          <small class="field-error" data-error="name"></small>
+        </label>
+        <label>
+          <span>{friendsCopy.urlLabel}</span>
+          <input name="url" type="url" required placeholder={friendsCopy.urlPlaceholder} />
+          <small class="field-error" data-error="url"></small>
+        </label>
+        <label>
+          <span>{friendsCopy.avatarLabel}</span>
+          <input name="avatar" type="url" required placeholder={friendsCopy.avatarPlaceholder} />
+          <small class="field-error" data-error="avatar"></small>
+        </label>
+        <label class="friends-form-wide">
+          <span>{friendsCopy.descriptionLabel}</span>
+          <textarea name="description" required maxlength="120" rows="3" placeholder={friendsCopy.descriptionPlaceholder}></textarea>
+          <small class="field-error" data-error="description"></small>
+        </label>
+        <div class="friends-form-actions friends-form-wide">
+          <button type="submit">{friendsCopy.copyButton}</button>
+          <span class="copy-status" role="status" aria-live="polite"></span>
+        </div>
+        <p class="friends-form-hint friends-form-wide">{friendsCopy.copyHint}</p>
+      </form>
+    </div>
+
+    <div class="friends-comment" id="friends-comments">
+      <h2>{friendsCopy.applicationTitle}</h2>
+      <p class="friends-comment-desc">{friendsCopy.commentDescription}</p>
       <Comment />
     </div>
   </div>
 </Layout>
+
+<script is:inline define:vars={{ friendsCopy }}>
+  document.querySelectorAll('.sticky-avatar img').forEach((image) => {
+    const usePlaceholder = () => {
+      if (!image.src.endsWith('/icons/friend-placeholder.svg')) {
+        image.src = '/icons/friend-placeholder.svg'
+      }
+    }
+    image.addEventListener('error', usePlaceholder)
+    if (image.complete && image.naturalWidth === 0) {
+      usePlaceholder()
+    }
+  })
+
+  const form = document.querySelector('#friend-application-form')
+  const commentTarget = document.querySelector('#friends-comments')
+
+  if (form instanceof HTMLFormElement && commentTarget instanceof HTMLElement) {
+    const status = form.querySelector('.copy-status')
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+
+      const formData = new FormData(form)
+      const name = String(formData.get('name') ?? '').trim()
+      const url = String(formData.get('url') ?? '').trim()
+      const avatar = String(formData.get('avatar') ?? '').trim()
+      const description = String(formData.get('description') ?? '').trim()
+      const errors = {
+        name: form.querySelector('[data-error="name"]'),
+        url: form.querySelector('[data-error="url"]'),
+        avatar: form.querySelector('[data-error="avatar"]'),
+        description: form.querySelector('[data-error="description"]'),
+      }
+
+      Object.values(errors).forEach((error) => {
+        if (error instanceof HTMLElement) {
+          error.textContent = ''
+        }
+      })
+
+      const setError = (field, message) => {
+        const error = errors[field]
+        if (error instanceof HTMLElement) {
+          error.textContent = message
+        }
+      }
+      const isHttpUrl = (value) => {
+        try {
+          const parsed = new URL(value)
+          return parsed.protocol === 'http:' || parsed.protocol === 'https:'
+        }
+        catch {
+          return false
+        }
+      }
+
+      if (!name) {
+        setError('name', friendsCopy.requiredError)
+      }
+      if (!isHttpUrl(url)) {
+        setError('url', friendsCopy.urlError)
+      }
+      if (!isHttpUrl(avatar)) {
+        setError('avatar', friendsCopy.avatarError)
+      }
+      if (!description || description.length > 120) {
+        setError('description', friendsCopy.descriptionError)
+      }
+
+      if (Object.values(errors).some(error => error instanceof HTMLElement && error.textContent)) {
+        return
+      }
+
+      const text = `**${friendsCopy.nameLabel}**：${name}\n**${friendsCopy.urlLabel}**：${url}\n**${friendsCopy.avatarLabel}**：${avatar}\n**${friendsCopy.descriptionLabel}**：${description}`
+
+      try {
+        await navigator.clipboard.writeText(text)
+        if (status instanceof HTMLElement) {
+          status.textContent = friendsCopy.copySuccess
+        }
+        commentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+      catch {
+        if (status instanceof HTMLElement) {
+          status.textContent = friendsCopy.copyFailure
+        }
+      }
+    })
+  }
+</script>
 
 <style>
   .friends-title {
@@ -128,6 +226,12 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     color: var(--secondary);
     font-size: 0.9375rem;
     line-height: 1.7;
+  }
+
+  .friends-meta {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    opacity: 0.8;
   }
 
   .friends-board {
@@ -253,13 +357,15 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     color: var(--secondary);
   }
 
+  .friends-application,
   .friends-comment {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--highlight);
   }
 
-  .friends-comment h3 {
+  .friends-application h2,
+  .friends-comment h2 {
     margin-bottom: 1rem;
     font-size: 1.125rem;
     font-weight: 700;
@@ -273,7 +379,55 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     line-height: 1.6;
   }
 
+  .friends-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .friends-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+    font-size: 0.875rem;
+    color: var(--primary);
+  }
+
+  .friends-form input,
+  .friends-form textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--highlight);
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+  }
+
+  .friends-form textarea { resize: vertical; }
+  .friends-form input:focus-visible,
+  .friends-form textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+  .friends-form-wide { grid-column: 1 / -1; }
+  .field-error { min-height: 1.1em; color: #b42318; }
+  .friends-form-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .friends-form button {
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    background: var(--primary);
+    color: var(--background);
+    cursor: pointer;
+    font: inherit;
+  }
+  .friends-form button:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+  .copy-status { color: var(--secondary); font-size: 0.8125rem; }
+  .friends-form-hint { margin: 0; color: var(--secondary); font-size: 0.8125rem; }
+
   @media (max-width: 640px) {
+    .friends-form { grid-template-columns: 1fr; }
+    .friends-form-wide { grid-column: auto; }
     .friends-board {
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem 1rem;
