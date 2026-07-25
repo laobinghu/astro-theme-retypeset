@@ -1,6 +1,5 @@
 import { unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
-// import partytown from '@astrojs/partytown'
 import sitemap from '@astrojs/sitemap'
 import Compress from 'astro-compress'
 import { defineConfig } from 'astro/config'
@@ -57,7 +56,7 @@ export default defineConfig({
     // }),
     sitemap(),
     Compress({
-      CSS: true,
+      CSS: false,
       HTML: true,
       Image: true,
       JavaScript: true,
