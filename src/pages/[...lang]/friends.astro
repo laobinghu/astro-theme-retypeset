@@ -87,6 +87,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
                 src={friend.avatar}
                 alt={friend.name}
                 loading="lazy"
+                onerror="this.onerror=null;this.src='/icons/favicon.svg'"
               />
             </div>
             <div class="sticky-name">{friend.name}</div>
@@ -204,8 +205,11 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
   }
 
   .sticky-avatar {
+    display: grid;
+    place-items: center;
     width: 60px;
     height: 60px;
+    aspect-ratio: 1;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid rgba(255,255,255,0.6);
@@ -216,9 +220,9 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
   }
 
   .sticky-avatar img {
+    display: block;
+    inset: 0;
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
