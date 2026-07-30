@@ -5,7 +5,7 @@ import process from 'node:process'
 // Allow fetching from HTTPS endpoints with self-signed/invalid certificates
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
-const API_URL = process.env.PUBLIC_API_URL || 'https://api.purefolia.dev'
+const API_URL = process.env.PUBLIC_API_URL || 'https://api.laobinghu.top'
 const FRIENDS_PATH = path.resolve('src/data/friends.json')
 
 async function main() {
@@ -26,7 +26,6 @@ async function main() {
   const remoteLastUpdated = data.lastUpdated || null
 
   const published = friends
-    .filter(f => f.is_published !== false)
     .map(f => ({
       name: f.name,
       url: f.url || f.link,
