@@ -88,7 +88,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
         <span>
           <strong>{friendsCopy.myInfo}</strong>
         </span>
-        <span class="application-toggle" aria-hidden="true"></span>
+
       </summary>
       <div class="friends-myinfo-card">
         <div class="friends-myinfo-avatar">
@@ -112,7 +112,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
           <strong>{friendsCopy.applicationTitle}</strong>
           <small>{friendsCopy.applicationDescription}</small>
         </span>
-        <span class="application-toggle" aria-hidden="true"></span>
+
       </summary>
       <form class="friends-form" id="friend-application-form" novalidate>
         <label>
@@ -612,10 +612,6 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     font-weight: 700;
   }
 
-  .friends-myinfo[open] .application-toggle {
-    transform: rotate(225deg) translateY(-50%);
-  }
-
   .friends-myinfo summary:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: -4px;
@@ -730,21 +726,28 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     position: absolute;
     right: 0.75rem;
     top: 50%;
-    width: 0.625rem;
-    height: 0.625rem;
+    width: 0.875rem;
+    height: 0.875rem;
     border-right: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
     transform: rotate(45deg) translateY(-50%);
-    transition: transform 180ms ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .friends-myinfo[open] .application-toggle,
   .friends-application[open] .application-toggle {
     transform: rotate(225deg) translateY(-50%);
   }
 
-  .friends-application summary:focus-visible {
+  .friends-application summary:focus-visible,
+  .friends-myinfo summary:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: -4px;
+  }
+
+  .friends-application summary:hover .application-toggle,
+  .friends-myinfo summary:hover .application-toggle {
+    border-color: var(--primary);
   }
 
   .friends-application .friends-form {
