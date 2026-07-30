@@ -102,6 +102,16 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
           <input name="url" type="url" required placeholder={friendsCopy.urlPlaceholder} />
           <small class="field-error" data-error="url"></small>
         </label>
+        <label>
+          <span>{friendsCopy.avatarLabel}</span>
+          <input name="avatar" type="url" placeholder={friendsCopy.avatarPlaceholder} />
+          <small class="field-error" data-error="avatar"></small>
+        </label>
+        <label>
+          <span>{friendsCopy.iconLabel}</span>
+          <input name="icon" type="url" placeholder={friendsCopy.iconPlaceholder} />
+          <small class="field-error" data-error="icon"></small>
+        </label>
         <label class="friends-form-wide">
           <span>{friendsCopy.emailLabel}</span>
           <input name="email" type="email" required placeholder={friendsCopy.emailPlaceholder} />
@@ -246,6 +256,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
       name: form.querySelector('[data-error="name"]'),
       url: form.querySelector('[data-error="url"]'),
       avatar: form.querySelector('[data-error="avatar"]'),
+      icon: form.querySelector('[data-error="icon"]'),
       email: form.querySelector('[data-error="email"]'),
       description: form.querySelector('[data-error="description"]'),
     }
@@ -290,6 +301,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
       const name = String(formData.get('name') ?? '').trim()
       const url = String(formData.get('url') ?? '').trim()
       const avatar = String(formData.get('avatar') ?? '').trim()
+      const icon = String(formData.get('icon') ?? '').trim()
       const email = String(formData.get('email') ?? '').trim()
       const description = String(formData.get('description') ?? '').trim()
 
@@ -303,8 +315,12 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
         setError('url', friendsCopy.urlError)
         hasError = true
       }
-      if (!isHttpUrl(avatar)) {
+      if (avatar && !isHttpUrl(avatar)) {
         setError('avatar', friendsCopy.avatarError)
+        hasError = true
+      }
+      if (icon && !isHttpUrl(icon)) {
+        setError('icon', friendsCopy.iconError)
         hasError = true
       }
       if (!email || !email.includes('@') || !email.includes('.')) {
@@ -329,7 +345,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
         const res = await fetch(`${API_URL}/api/friends-links/apply`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ name, url, avatar, email, description }),
+          body: JSON.stringify({ name, url, avatar, icon, email, description }),
           signal: AbortSignal.timeout(15_000),
         })
 
@@ -354,7 +370,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
       }
       catch {
         // API failed — fallback to clipboard copy
-        const text = `**${friendsCopy.nameLabel}**：${name}\n**${friendsCopy.urlLabel}**：${url}\n**${friendsCopy.avatarLabel}**：${avatar}\n**${friendsCopy.emailLabel}**：${email}\n**${friendsCopy.descriptionLabel}**：${description}`
+        const text = `**${friendsCopy.nameLabel}**：${name}\n**${friendsCopy.urlLabel}**：${url}\n**${friendsCopy.avatarLabel}**：${avatar}\n**${friendsCopy.iconLabel}**：${icon}\n**${friendsCopy.emailLabel}**：${email}\n**${friendsCopy.descriptionLabel}**：${description}`
 
         try {
           await navigator.clipboard.writeText(text)
@@ -548,9 +564,9 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
   }
 
   .friends-application summary {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 1rem;
     padding: 1rem 1.125rem;
     cursor: pointer;
@@ -582,17 +598,19 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
   }
 
   .application-toggle {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
     width: 0.625rem;
     height: 0.625rem;
-    flex: 0 0 auto;
     border-right: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
-    transform: rotate(45deg) translateY(-0.2rem);
+    transform: rotate(45deg) translateY(-50%);
     transition: transform 180ms ease;
   }
 
   .friends-application[open] .application-toggle {
-    transform: rotate(225deg) translateY(-0.2rem);
+    transform: rotate(225deg) translateY(-50%);
   }
 
   .friends-application summary:focus-visible {
