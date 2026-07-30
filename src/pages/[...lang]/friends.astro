@@ -1,4 +1,5 @@
 ---
+import type { FriendsPageTranslation } from '@/i18n/ui'
 import Comment from '@/components/Comment/Index.astro'
 import { allLocales } from '@/config'
 import friendsData from '@/data/friends.json'
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
 
 const { currentLang } = getPageInfo(Astro.url.pathname)
 const currentUI = ui[currentLang as keyof typeof ui] ?? {}
-const friendsCopy = currentUI.friendsPage ?? ui.zh.friendsPage!
+const friendsCopy = { ...ui.zh.friendsPage, ...currentUI.friendsPage } as FriendsPageTranslation
 const friends: Array<{
   name: string
   url: string
@@ -43,6 +44,8 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
         {friendsCopy.count.replace('{count}', String(friends.length))}
         <span aria-hidden="true"> · </span>
         {friendsCopy.updated.replace('{date}', updatedDate)}
+        <span aria-hidden="true"> · </span>
+        <span class="data-source" data-source="local">{friendsCopy.localSource}</span>
       </p>
     </div>
 
@@ -80,11 +83,14 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
       </div>
     )}
 
-    <div class="friends-application">
-      <h2>{friendsCopy.applicationTitle}</h2>
-      <p class="friends-comment-desc">
-        {friendsCopy.applicationDescription}
-      </p>
+    <details class="friends-application">
+      <summary>
+        <span>
+          <strong>{friendsCopy.applicationTitle}</strong>
+          <small>{friendsCopy.applicationDescription}</small>
+        </span>
+        <span class="application-toggle" aria-hidden="true"></span>
+      </summary>
       <form class="friends-form" id="friend-application-form" novalidate>
         <label>
           <span>{friendsCopy.nameLabel}</span>
@@ -96,10 +102,10 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
           <input name="url" type="url" required placeholder={friendsCopy.urlPlaceholder} />
           <small class="field-error" data-error="url"></small>
         </label>
-        <label>
-          <span>{friendsCopy.avatarLabel}</span>
-          <input name="avatar" type="url" required placeholder={friendsCopy.avatarPlaceholder} />
-          <small class="field-error" data-error="avatar"></small>
+        <label class="friends-form-wide">
+          <span>{friendsCopy.emailLabel}</span>
+          <input name="email" type="email" required placeholder={friendsCopy.emailPlaceholder} />
+          <small class="field-error" data-error="email"></small>
         </label>
         <label class="friends-form-wide">
           <span>{friendsCopy.descriptionLabel}</span>
@@ -107,12 +113,12 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
           <small class="field-error" data-error="description"></small>
         </label>
         <div class="friends-form-actions friends-form-wide">
-          <button type="submit">{friendsCopy.copyButton}</button>
-          <span class="copy-status" role="status" aria-live="polite"></span>
+          <button type="submit" class="friends-form-submit">{friendsCopy.submitButton}</button>
+          <span class="submit-status" role="status" aria-live="polite"></span>
         </div>
         <p class="friends-form-hint friends-form-wide">{friendsCopy.copyHint}</p>
       </form>
-    </div>
+    </details>
 
     <div class="friends-comment" id="friends-comments">
       <h2>{friendsCopy.applicationTitle}</h2>
@@ -123,6 +129,9 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
 </Layout>
 
 <script is:inline define:vars={{ friendsCopy }}>
+  const API_URL = 'https://api.purefolia.dev'
+
+  // --- Avatar fallback ---
   document.querySelectorAll('.sticky-avatar img').forEach((image) => {
     const usePlaceholder = () => {
       if (!image.src.endsWith('/icons/friend-placeholder.svg')) {
@@ -135,78 +144,233 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     }
   })
 
+  // --- Online friends data (client-side enhancement) ---
+  ;(async () => {
+    try {
+      const res = await fetch(`${API_URL}/api/friends-links`, {
+        signal: AbortSignal.timeout(5000),
+        headers: { Accept: 'application/json' },
+      })
+      if (!res.ok) {
+        throw new Error(String(res.status))
+      }
+      const data = await res.json()
+      const onlineFriends = Array.isArray(data) ? data : data.data ?? data.friends ?? []
+      const remoteLastUpdated = data.lastUpdated || null
+      const published = onlineFriends.filter(f => f.is_published !== false)
+
+      if (published.length > 0) {
+        const board = document.querySelector('.friends-board')
+        const meta = document.querySelector('.friends-meta')
+        const existingLinks = new Map()
+
+        board?.querySelectorAll('a.sticky-note').forEach((el) => {
+          const href = el.getAttribute('href')
+          if (href) {
+            existingLinks.set(href, el)
+          }
+        })
+
+        published.forEach((friend, index) => {
+          const url = friend.url || friend.link
+          if (existingLinks.has(url)) {
+            return
+          }
+
+          const colors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#fed7aa']
+          const totalCards = board?.children.length ?? 0
+          const i = totalCards + index
+
+          const a = document.createElement('a')
+          a.href = url
+          a.target = '_blank'
+          a.rel = 'noopener noreferrer'
+          a.className = 'sticky-note'
+          a.setAttribute('role', 'listitem')
+          a.style.cssText = `--rotate: ${(i % 5 - 2) * 2}deg; --color: ${colors[i % colors.length]}`
+          a.innerHTML = `
+            <span class="sticky-pin" aria-hidden="true"></span>
+            <div class="sticky-content">
+              <div class="sticky-avatar">
+                <img src="${friend.avatar || '/icons/friend-placeholder.svg'}" alt="${friend.name}" loading="lazy"
+                  onerror="this.src='/icons/friend-placeholder.svg'" />
+              </div>
+              <div class="sticky-name">${friend.name}</div>
+              ${friend.description ? `<div class="sticky-desc">${friend.description}</div>` : ''}
+            </div>
+          `
+          board?.appendChild(a)
+
+          const img = a.querySelector('img')
+          if (img) {
+            img.addEventListener('error', () => {
+              img.src = '/icons/friend-placeholder.svg'
+            })
+            if (img.complete && img.naturalWidth === 0) {
+              img.src = '/icons/friend-placeholder.svg'
+            }
+          }
+        })
+
+        if (meta && published.length > 0) {
+          const sourceEl = meta.querySelector('.data-source')
+          if (sourceEl) {
+            sourceEl.textContent = friendsCopy.onlineSource
+            sourceEl.dataset.source = 'online'
+          }
+
+          const onlineInfo = document.createElement('span')
+          onlineInfo.className = 'online-meta'
+          const dateStr = remoteLastUpdated
+            ? new Date(remoteLastUpdated).toLocaleDateString('zh', { year: 'numeric', month: 'long', day: 'numeric' })
+            : null
+          onlineInfo.textContent = ` · ${friendsCopy.onlineUpdated.replace('{date}', dateStr || '刚刚')}`
+          meta.appendChild(onlineInfo)
+        }
+      }
+    }
+    catch {
+      // silent: local data is the priority
+    }
+  })()
+
+  // --- Form submission ---
   const form = document.querySelector('#friend-application-form')
   const commentTarget = document.querySelector('#friends-comments')
 
-  if (form instanceof HTMLFormElement && commentTarget instanceof HTMLElement) {
-    const status = form.querySelector('.copy-status')
+  if (form instanceof HTMLFormElement) {
+    const submitBtn = form.querySelector('.friends-form-submit')
+    const status = form.querySelector('.submit-status')
 
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault()
+    const errors = {
+      name: form.querySelector('[data-error="name"]'),
+      url: form.querySelector('[data-error="url"]'),
+      avatar: form.querySelector('[data-error="avatar"]'),
+      email: form.querySelector('[data-error="email"]'),
+      description: form.querySelector('[data-error="description"]'),
+    }
 
-      const formData = new FormData(form)
-      const name = String(formData.get('name') ?? '').trim()
-      const url = String(formData.get('url') ?? '').trim()
-      const avatar = String(formData.get('avatar') ?? '').trim()
-      const description = String(formData.get('description') ?? '').trim()
-      const errors = {
-        name: form.querySelector('[data-error="name"]'),
-        url: form.querySelector('[data-error="url"]'),
-        avatar: form.querySelector('[data-error="avatar"]'),
-        description: form.querySelector('[data-error="description"]'),
-      }
-
+    const clearErrors = () => {
       Object.values(errors).forEach((error) => {
         if (error instanceof HTMLElement) {
           error.textContent = ''
         }
       })
+    }
 
-      const setError = (field, message) => {
-        const error = errors[field]
-        if (error instanceof HTMLElement) {
-          error.textContent = message
-        }
+    const setError = (field, message) => {
+      const el = errors[field]
+      if (el instanceof HTMLElement) {
+        el.textContent = message
       }
-      const isHttpUrl = (value) => {
-        try {
-          const parsed = new URL(value)
-          return parsed.protocol === 'http:' || parsed.protocol === 'https:'
-        }
-        catch {
-          return false
-        }
+    }
+
+    const setStatus = (msg) => {
+      if (status instanceof HTMLElement) {
+        status.textContent = msg
       }
+    }
+
+    const isHttpUrl = (value) => {
+      try {
+        const parsed = new URL(value)
+        return parsed.protocol === 'http:' || parsed.protocol === 'https:'
+      }
+      catch {
+        return false
+      }
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+      clearErrors()
+      setStatus('')
+
+      const formData = new FormData(form)
+      const name = String(formData.get('name') ?? '').trim()
+      const url = String(formData.get('url') ?? '').trim()
+      const avatar = String(formData.get('avatar') ?? '').trim()
+      const email = String(formData.get('email') ?? '').trim()
+      const description = String(formData.get('description') ?? '').trim()
+
+      let hasError = false
 
       if (!name) {
         setError('name', friendsCopy.requiredError)
+        hasError = true
       }
       if (!isHttpUrl(url)) {
         setError('url', friendsCopy.urlError)
+        hasError = true
       }
       if (!isHttpUrl(avatar)) {
         setError('avatar', friendsCopy.avatarError)
+        hasError = true
+      }
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        setError('email', friendsCopy.emailError)
+        hasError = true
       }
       if (!description || description.length > 120) {
         setError('description', friendsCopy.descriptionError)
+        hasError = true
       }
 
-      if (Object.values(errors).some(error => error instanceof HTMLElement && error.textContent)) {
+      if (hasError) {
         return
       }
 
-      const text = `**${friendsCopy.nameLabel}**：${name}\n**${friendsCopy.urlLabel}**：${url}\n**${friendsCopy.avatarLabel}**：${avatar}\n**${friendsCopy.descriptionLabel}**：${description}`
+      if (submitBtn instanceof HTMLButtonElement) {
+        submitBtn.textContent = friendsCopy.submittingButton
+        submitBtn.disabled = true
+      }
 
       try {
-        await navigator.clipboard.writeText(text)
-        if (status instanceof HTMLElement) {
-          status.textContent = friendsCopy.copySuccess
+        const res = await fetch(`${API_URL}/api/friends-links/apply`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name, url, avatar, email, description }),
+          signal: AbortSignal.timeout(15_000),
+        })
+
+        if (res.ok) {
+          setStatus(friendsCopy.submitSuccess)
+          form.reset()
+          return
         }
-        commentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+        const body = await res.json().catch(() => ({}))
+        const serverErrors = body?.errors
+        if (serverErrors && typeof serverErrors === 'object') {
+          for (const [field, messages] of Object.entries(serverErrors)) {
+            if (errors[field] && Array.isArray(messages)) {
+              setError(field, messages[0])
+            }
+          }
+          return
+        }
+
+        throw new Error(`HTTP ${res.status}`)
       }
       catch {
-        if (status instanceof HTMLElement) {
-          status.textContent = friendsCopy.copyFailure
+        // API failed — fallback to clipboard copy
+        const text = `**${friendsCopy.nameLabel}**：${name}\n**${friendsCopy.urlLabel}**：${url}\n**${friendsCopy.avatarLabel}**：${avatar}\n**${friendsCopy.emailLabel}**：${email}\n**${friendsCopy.descriptionLabel}**：${description}`
+
+        try {
+          await navigator.clipboard.writeText(text)
+          setStatus(friendsCopy.copySuccess)
+          if (commentTarget instanceof HTMLElement) {
+            commentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }
+        catch {
+          setStatus(friendsCopy.submitFailure)
+        }
+      }
+      finally {
+        if (submitBtn instanceof HTMLButtonElement) {
+          submitBtn.textContent = friendsCopy.submitButton
+          submitBtn.disabled = false
         }
       }
     })
@@ -360,11 +524,8 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
   .friends-application,
   .friends-comment {
     margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--highlight);
   }
 
-  .friends-application h2,
   .friends-comment h2 {
     margin-bottom: 1rem;
     font-size: 1.125rem;
@@ -379,10 +540,75 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     line-height: 1.6;
   }
 
+  .friends-application {
+    overflow: hidden;
+    border: 1px solid oklch(var(--un-preset-theme-colors-primary) / 0.25);
+    border-radius: 0.5rem;
+    background: oklch(var(--un-preset-theme-colors-background));
+  }
+
+  .friends-application summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.125rem;
+    cursor: pointer;
+    color: var(--primary);
+    list-style: none;
+  }
+
+  .friends-application > summary { list-style: none !important; }
+  .friends-application > summary::marker { content: none; }
+  .friends-application summary::-webkit-details-marker { display: none; }
+  .friends-application > summary::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .friends-application summary strong,
+  .friends-application summary small { display: block; }
+
+  .friends-application summary strong {
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  .friends-application summary small {
+    margin-top: 0.35rem;
+    color: var(--secondary);
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .application-toggle {
+    width: 0.625rem;
+    height: 0.625rem;
+    flex: 0 0 auto;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-0.2rem);
+    transition: transform 180ms ease;
+  }
+
+  .friends-application[open] .application-toggle {
+    transform: rotate(225deg) translateY(-0.2rem);
+  }
+
+  .friends-application summary:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: -4px;
+  }
+
+  .friends-application .friends-form {
+    padding: 1rem 1.125rem 1.125rem;
+    border-top: 1px solid oklch(var(--un-preset-theme-colors-primary) / 0.25);
+  }
+
   .friends-form {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 1.125rem 1rem;
   }
 
   .friends-form label {
@@ -399,35 +625,62 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     width: 100%;
     min-width: 0;
     padding: 0.65rem 0.75rem;
-    border: 1px solid var(--highlight);
-    border-radius: 4px;
-    background: transparent;
-    color: inherit;
+    border: 1px solid oklch(var(--un-preset-theme-colors-primary) / 0.25);
+    border-radius: 0.25rem;
+    background: oklch(var(--un-preset-theme-colors-background));
+    color: var(--primary);
     font: inherit;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
   }
 
   .friends-form textarea { resize: vertical; }
+  .friends-form input::placeholder,
+  .friends-form textarea::placeholder { color: var(--secondary); opacity: 0.72; }
+  .friends-form input:hover,
+  .friends-form textarea:hover { border-color: oklch(var(--un-preset-theme-colors-primary) / 0.5); }
   .friends-form input:focus-visible,
-  .friends-form textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+  .friends-form textarea:focus-visible {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px oklch(var(--un-preset-theme-colors-primary) / 0.16);
+  }
   .friends-form-wide { grid-column: 1 / -1; }
   .field-error { min-height: 1.1em; color: #b42318; }
-  .friends-form-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-  .friends-form button {
+  .friends-form-actions { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; flex-wrap: wrap; }
+  .friends-form .friends-form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
     padding: 0.65rem 1rem;
-    border: 1px solid var(--primary);
-    border-radius: 4px;
-    background: var(--primary);
-    color: var(--background);
+    border: 1px solid #2b2b2b !important;
+    border-radius: 0.25rem;
+    background: #2b2b2b !important;
+    color: #fff !important;
     cursor: pointer;
     font: inherit;
+    font-weight: 600;
+    transition: opacity 180ms ease, background-color 180ms ease;
   }
-  .friends-form button:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+  .friends-form .friends-form-submit:hover:not(:disabled) { background: #4a4a4a !important; }
+  .friends-form .friends-form-submit:disabled { cursor: wait; opacity: 0.7; }
+  .friends-form .friends-form-submit:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+  :global(html.dark) .friends-form .friends-form-submit {
+    border-color: #e7e2da !important;
+    background: #e7e2da !important;
+    color: #1b1b1e !important;
+  }
+  :global(html.dark) .friends-form .friends-form-submit:hover:not(:disabled) { background: #fff !important; }
   .copy-status { color: var(--secondary); font-size: 0.8125rem; }
-  .friends-form-hint { margin: 0; color: var(--secondary); font-size: 0.8125rem; }
+  .friends-form-hint { margin: -0.5rem 0 0; color: var(--secondary); font-size: 0.8125rem; text-align: right; }
+  .online-meta { opacity: 0.7; }
+  .data-source[data-source="online"] { opacity: 0.7; }
 
   @media (max-width: 640px) {
     .friends-form { grid-template-columns: 1fr; }
     .friends-form-wide { grid-column: auto; }
+    .friends-form-actions { justify-content: flex-start; }
+    .friends-form-hint { text-align: left; }
     .friends-board {
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem 1rem;
@@ -473,7 +726,11 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .sticky-note {
+    .sticky-note,
+    .application-toggle,
+    .friends-form input,
+    .friends-form textarea,
+    .friends-form button {
       transition: none;
     }
   }

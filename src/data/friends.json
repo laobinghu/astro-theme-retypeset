@@ -13,28 +13,16 @@
       "description": "AFO，新的开始"
     },
     {
-      "name": "小奥のblog",
-      "url": "https://www.aokaoka.top/",
-      "avatar": "https://blog.aokaoka.top/img/AOKAOKA.jpg",
-      "description": "不经一事，不长一智"
-    },
-    {
       "name": "知行间",
       "url": "https://blog.xp6.top/",
-      "avatar": "https://blog.xp6.top/_next/image?url=https%3A%2F%2Fdl.xp6.top%2Fview.php%2Fdd18bd21e6f5495ff3313d9c110caa39.png&w=640&q=75",
+      "avatar": "https://dl.xp6.top/view.php/dd18bd21e6f5495ff3313d9c110caa39.png&w=640&q=75",
       "description": "知明而行无过矣"
     },
     {
       "name": "朽丘博",
       "url": "https://koxiuqiu.cn",
-      "avatar": "https://cdn.koxiuqiu.cn/koxiuqiu/img/favicon.webp",
+      "avatar": "https://koxiuqiu.cn/aicon.png",
       "description": "一定会和喜欢的人在夏日夜晚牵手慢步"
-    },
-    {
-      "name": "张洪Heo",
-      "url": "https://blog.zhheo.com",
-      "avatar": "https://bu.dusays.com/2022/12/28/63ac2812183aa.png",
-      "description": "分享设计与科技生活"
     },
     {
       "name": "Pinpe 的云端",
@@ -49,5 +37,5 @@
       "description": "杜老师说"
     }
   ],
-  "lastUpdated": "2026-07-25T00:00:00.000Z"
+  "lastUpdated": "2026-07-30T09:53:52+00:00"
 }

@@ -43,6 +43,66 @@
           "name": "heroImage",
           "type": "image",
           "isPreviewImage": true
+        },
+        {
+          "title": "seo-heading",
+          "name": "seo-heading",
+          "type": "string"
+        },
+        {
+          "title": "abbrlink",
+          "name": "abbrlink",
+          "type": "string"
+        },
+        {
+          "title": "dates-heading",
+          "name": "dates-heading",
+          "type": "string"
+        },
+        {
+          "title": "updated",
+          "name": "updated",
+          "type": "datetime"
+        },
+        {
+          "title": "classification-heading",
+          "name": "classification-heading",
+          "type": "string"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "state-heading",
+          "name": "state-heading",
+          "type": "string"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "pin",
+          "name": "pin",
+          "type": "number"
+        },
+        {
+          "title": "toc",
+          "name": "toc",
+          "type": "boolean"
+        },
+        {
+          "title": "lang",
+          "name": "lang",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
         }
       ]
     }

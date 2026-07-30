@@ -58,6 +58,9 @@ async function main() {
       if (/^(?:https?:|data:|mailto:|tel:|#|javascript:|\/\/)/i.test(reference)) {
         continue
       }
+      if (reference.includes('${')) {
+        continue
+      }
       const pathname = new URL(reference, `${baseUrl || 'https://localhost'}/`).pathname.replace(/^\//, '')
       const candidates = [pathname, pathname.endsWith('/') ? `${pathname}index.html` : pathname]
       if (!candidates.some(candidate => relativeFiles.has(candidate))) {

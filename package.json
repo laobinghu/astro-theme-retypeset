@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "pnpm check && astro dev",
     "check": "astro check",
-    "build": "pnpm generate-version && pnpm check && pnpm build:astro && pnpm postbuild",
+    "build": "pnpm generate-version && pnpm sync-friends && pnpm check && pnpm build:astro && pnpm postbuild",
+    "sync-friends": "node --env-file=.env scripts/sync-friends.mjs",
     "build:astro": "astro build",
     "postbuild": "pnpm apply-lqip && pnpm gen-urls && pnpm validate-dist",
     "generate-version": "node --env-file=.env scripts/generate-version.mjs",
