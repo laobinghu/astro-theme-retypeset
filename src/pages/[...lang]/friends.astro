@@ -1,7 +1,7 @@
 ---
 import type { FriendsPageTranslation } from '@/i18n/ui'
 import Comment from '@/components/Comment/Index.astro'
-import { allLocales } from '@/config'
+import { allLocales, themeConfig } from '@/config'
 import friendsData from '@/data/friends.json'
 import { getLangRouteParam } from '@/i18n/lang'
 import { ui } from '@/i18n/ui'
@@ -82,6 +82,29 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
         <p>{friendsCopy.empty}</p>
       </div>
     )}
+
+    <details class="friends-myinfo">
+      <summary>
+        <span>
+          <strong>{friendsCopy.myInfo}</strong>
+        </span>
+        <span class="application-toggle" aria-hidden="true"></span>
+      </summary>
+      <div class="friends-myinfo-card">
+        <div class="friends-myinfo-avatar">
+          <img src={themeConfig.site.avatar} alt={themeConfig.site.title} loading="lazy" />
+        </div>
+        <div class="friends-myinfo-body">
+          <div class="friends-myinfo-name">{themeConfig.site.title}</div>
+          <a href={themeConfig.site.url} target="_blank" rel="noopener noreferrer" class="friends-myinfo-url">{themeConfig.site.url}</a>
+          <p class="friends-myinfo-desc">{themeConfig.site.description}</p>
+          <div class="friends-myinfo-icon">
+            <span>图标：</span>
+            <img src={themeConfig.site.favicon} alt="icon" width="24" height="24" />
+          </div>
+        </div>
+      </div>
+    </details>
 
     <details class="friends-application">
       <summary>
@@ -554,6 +577,112 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     font-size: 0.875rem;
     color: var(--secondary);
     line-height: 1.6;
+  }
+
+  .friends-myinfo {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 1px solid oklch(var(--un-preset-theme-colors-primary) / 0.25);
+    border-radius: 0.5rem;
+    background: oklch(var(--un-preset-theme-colors-background));
+  }
+
+  .friends-myinfo summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.125rem;
+    cursor: pointer;
+    color: var(--primary);
+    list-style: none;
+  }
+
+  .friends-myinfo > summary { list-style: none !important; }
+  .friends-myinfo > summary::marker { content: none; }
+  .friends-myinfo summary::-webkit-details-marker { display: none; }
+  .friends-myinfo > summary::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .friends-myinfo summary strong {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  .friends-myinfo[open] .application-toggle {
+    transform: rotate(225deg) translateY(-50%);
+  }
+
+  .friends-myinfo summary:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: -4px;
+  }
+
+  .friends-myinfo-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.125rem;
+    border-top: 1px solid oklch(var(--un-preset-theme-colors-primary) / 0.25);
+  }
+
+  .friends-myinfo-avatar {
+    flex: 0 0 auto;
+  }
+
+  .friends-myinfo-avatar img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid oklch(var(--un-preset-theme-colors-primary) / 0.15);
+  }
+
+  .friends-myinfo-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+
+  .friends-myinfo-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .friends-myinfo-url {
+    font-size: 0.825rem;
+    color: var(--primary);
+    word-break: break-all;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: oklch(var(--un-preset-theme-colors-primary) / 0.3);
+  }
+
+  .friends-myinfo-url:hover {
+    text-decoration-color: var(--primary);
+  }
+
+  .friends-myinfo-desc {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--secondary);
+    line-height: 1.5;
+  }
+
+  .friends-myinfo-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.825rem;
+    color: var(--secondary);
+  }
+
+  .friends-myinfo-icon img {
+    display: block;
   }
 
   .friends-application {

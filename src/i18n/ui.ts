@@ -21,6 +21,7 @@ export interface FriendsPageTranslation {
   empty: string
   applicationTitle: string
   applicationDescription: string
+  myInfo: string
   nameLabel: string
   namePlaceholder: string
   urlLabel: string
@@ -73,6 +74,7 @@ export const ui: Record<Language, Translation> = {
       empty: 'Noch keine Freundeslinks',
       applicationTitle: 'Freundeslink beantragen',
       applicationDescription: 'Nach dem Einreichen muss die Anfrage geprüft werden. Nach der Genehmigung wird sie beim nächsten Build synchronisiert.',
+      myInfo: 'Meine Informationen',
       nameLabel: 'Blog-Name',
       namePlaceholder: 'z.B. 烙饼的碎碎念',
       urlLabel: 'Blog-URL',
@@ -124,6 +126,7 @@ export const ui: Record<Language, Translation> = {
       empty: 'No friend links yet',
       applicationTitle: 'Apply for Friend Link',
       applicationDescription: 'After submission, it will be reviewed and synced on the next build upon approval.',
+      myInfo: 'My Info',
       nameLabel: 'Blog Name',
       namePlaceholder: 'e.g. 烙饼的碎碎念',
       urlLabel: 'Blog URL',
@@ -175,6 +178,7 @@ export const ui: Record<Language, Translation> = {
       empty: 'Aún no hay enlaces de amigos',
       applicationTitle: 'Solicitar intercambio de enlaces',
       applicationDescription: 'Después del envío, se revisará y se sincronizará en la próxima compilación tras la aprobación.',
+      myInfo: 'Mi Información',
       nameLabel: 'Nombre del Blog',
       namePlaceholder: 'ej. 烙饼的碎碎念',
       urlLabel: 'URL del Blog',
@@ -226,6 +230,7 @@ export const ui: Record<Language, Translation> = {
       empty: 'Pas encore de liens d\'amis',
       applicationTitle: 'Demander un échange de liens',
       applicationDescription: 'Après soumission, la demande sera examinée et synchronisée lors de la prochaine construction.',
+      myInfo: 'Mes Informations',
       nameLabel: 'Nom du blog',
       namePlaceholder: 'ex. 烙饼的碎碎念',
       urlLabel: 'URL du blog',
@@ -277,6 +282,7 @@ export const ui: Record<Language, Translation> = {
       empty: 'まだ友達リンクはありません',
       applicationTitle: 'リンク交換を申請',
       applicationDescription: '提出後、審査が行われ、承認されると次回ビルド時に同期されます。',
+      myInfo: '私の情報',
       nameLabel: 'ブログ名',
       namePlaceholder: '例: 烙饼的碎碎念',
       urlLabel: 'ブログURL',
@@ -328,6 +334,7 @@ export const ui: Record<Language, Translation> = {
       empty: '아직 친구 링크가 없습니다',
       applicationTitle: '링크 교환 신청',
       applicationDescription: '제출 후 검토가 진행되며, 승인되면 다음 빌드時に 동기화됩니다.',
+      myInfo: '내 정보',
       nameLabel: '블로그 이름',
       namePlaceholder: '예: 烙饼的碎碎念',
       urlLabel: '블로그 URL',
@@ -379,6 +386,7 @@ export const ui: Record<Language, Translation> = {
       empty: 'Brak linków znajomych',
       applicationTitle: 'Złóż wniosek o wymianę linków',
       applicationDescription: 'Po przesłaniu wniosek zostanie sprawdzony i zsynchronizowany przy następnej kompilacji.',
+      myInfo: 'Moje Informacje',
       nameLabel: 'Nazwa bloga',
       namePlaceholder: 'np. 烙饼的碎碎念',
       urlLabel: 'URL bloga',
@@ -430,6 +438,7 @@ export const ui: Record<Language, Translation> = {
       empty: 'Nenhum link de amigo ainda',
       applicationTitle: 'Solicitar troca de links',
       applicationDescription: 'Após o envio, será revisado e sincronizado na próxima compilação após aprovação.',
+      myInfo: 'Minhas Informações',
       nameLabel: 'Nome do Blog',
       namePlaceholder: 'ex. 烙饼的碎碎念',
       urlLabel: 'URL do Blog',
@@ -481,6 +490,7 @@ export const ui: Record<Language, Translation> = {
       empty: 'Пока нет ссылок друзей',
       applicationTitle: 'Запросить обмен ссылками',
       applicationDescription: 'После отправки заявка будет рассмотрена и синхронизирована при следующей сборке.',
+      myInfo: 'Моя информация',
       nameLabel: 'Название блога',
       namePlaceholder: 'например, 烙饼的碎碎念',
       urlLabel: 'URL блога',
@@ -532,6 +542,7 @@ export const ui: Record<Language, Translation> = {
       empty: '暂无友链数据',
       applicationTitle: '申请交换友链',
       applicationDescription: '提交后需等待审核，审核通过后会在下次构建时同步显示。',
+      myInfo: '本站信息',
       nameLabel: '博客名称',
       namePlaceholder: '例如：烙饼的碎碎念',
       urlLabel: '博客地址',
@@ -583,6 +594,7 @@ export const ui: Record<Language, Translation> = {
       empty: '暫無友鏈資料',
       applicationTitle: '申請交換友鏈',
       applicationDescription: '提交後需等待審核，審核通過後會在下次構建時同步顯示。',
+      myInfo: '本站資訊',
       nameLabel: '部落格名稱',
       namePlaceholder: '例如：烙餅的碎碎念',
       urlLabel: '部落格地址',

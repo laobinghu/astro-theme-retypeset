@@ -20,7 +20,9 @@ export const themeConfig: ThemeConfig = {
     base: '/', // e.g., '/blog', '/docs'
     // favicon url
     // recommended formats: svg, png or ico
-    favicon: '/icons/favicon.svg', // or https://example.com/favicon.svg
+    favicon: 'https://cdn.647382.xyz/avatar/avatar.jpg', // or https://example.com/favicon.svg
+    // site avatar for friend link exchange
+    avatar: 'https://cdn.647382.xyz/avatar/avatar.jpg', // or https://example.com/avatar.png
   },
   // SITE INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> END
 
