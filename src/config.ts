@@ -10,7 +10,7 @@ export const themeConfig: ThemeConfig = {
     // site description
     description: 'End the past, start the new.',
     // use i18n title/subtitle/description from src/i18n/ui.ts instead of static ones above
-    i18nTitle: true, // true | false
+    i18nTitle: false, // true | false
     // author name
     author: '烧瑚烙饼',
     // site url
@@ -156,12 +156,12 @@ export const themeConfig: ThemeConfig = {
     // social links
     links: [
       {
-        name: '蜀ICP备2025120814号-3',
+        name: '蜀ICP备2025120814号-2',
         url: 'https://beian.miit.gov.cn/',
       },
       {
-        name: '川公网安备51070002110061号',
-        url: 'https://beian.mps.gov.cn/#/query/webSearch?code=51070002110061',
+        name: '川公网安备51070002110074号',
+        url: 'https://beian.mps.gov.cn/#/query/webSearch?code=51070002110074',
       },
     ],
     // year of website start
