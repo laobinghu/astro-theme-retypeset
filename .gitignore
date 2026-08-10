@@ -33,4 +33,7 @@ src/version.json
 .env
 .edgeone/*
 .tef_dist/*
+
+# AI session logs
+.aislop/
   

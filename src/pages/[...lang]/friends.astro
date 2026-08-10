@@ -163,18 +163,70 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
 
 <script is:inline define:vars={{ friendsCopy }}>
   const API_URL = 'https://api.laobinghu.top'
+  const STICKY_COLORS = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#fed7aa']
+  const FRIEND_PLACEHOLDER = '/icons/friend-placeholder.svg'
 
-  // --- Avatar fallback ---
-  document.querySelectorAll('.sticky-avatar img').forEach((image) => {
+  function useAvatarFallback(image) {
     const usePlaceholder = () => {
-      if (!image.src.endsWith('/icons/friend-placeholder.svg')) {
-        image.src = '/icons/friend-placeholder.svg'
+      if (!image.src.endsWith(FRIEND_PLACEHOLDER)) {
+        image.src = FRIEND_PLACEHOLDER
       }
     }
+
     image.addEventListener('error', usePlaceholder)
     if (image.complete && image.naturalWidth === 0) {
       usePlaceholder()
     }
+  }
+
+  function createFriendCard(friend, index) {
+    const card = document.createElement('a')
+    const url = friend.url || friend.link
+    const name = friend.name || url
+
+    card.href = url
+    card.target = '_blank'
+    card.rel = 'noopener noreferrer'
+    card.className = 'sticky-note'
+    card.setAttribute('role', 'listitem')
+    card.style.setProperty('--rotate', `${(index % 5 - 2) * 2}deg`)
+    card.style.setProperty('--color', STICKY_COLORS[index % STICKY_COLORS.length])
+
+    const pin = document.createElement('span')
+    pin.className = 'sticky-pin'
+    pin.setAttribute('aria-hidden', 'true')
+
+    const content = document.createElement('div')
+    content.className = 'sticky-content'
+
+    const avatar = document.createElement('div')
+    avatar.className = 'sticky-avatar'
+    const image = document.createElement('img')
+    image.src = friend.avatar || FRIEND_PLACEHOLDER
+    image.alt = name
+    image.loading = 'lazy'
+    useAvatarFallback(image)
+    avatar.appendChild(image)
+
+    const nameElement = document.createElement('div')
+    nameElement.className = 'sticky-name'
+    nameElement.textContent = name
+    content.append(avatar, nameElement)
+
+    if (friend.description) {
+      const description = document.createElement('div')
+      description.className = 'sticky-desc'
+      description.textContent = friend.description
+      content.appendChild(description)
+    }
+
+    card.append(pin, content)
+    return card
+  }
+
+  // --- Avatar fallback ---
+  document.querySelectorAll('.sticky-avatar img').forEach((image) => {
+    useAvatarFallback(image)
   })
 
   // --- Online friends data (client-side enhancement) ---
@@ -204,45 +256,15 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
           }
         })
 
+        const initialCardCount = board?.children.length ?? 0
+
         published.forEach((friend, index) => {
           const url = friend.url || friend.link
-          if (existingLinks.has(url)) {
+          if (!url || existingLinks.has(url)) {
             return
           }
 
-          const colors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#fed7aa']
-          const totalCards = board?.children.length ?? 0
-          const i = totalCards + index
-
-          const a = document.createElement('a')
-          a.href = url
-          a.target = '_blank'
-          a.rel = 'noopener noreferrer'
-          a.className = 'sticky-note'
-          a.setAttribute('role', 'listitem')
-          a.style.cssText = `--rotate: ${(i % 5 - 2) * 2}deg; --color: ${colors[i % colors.length]}`
-          a.innerHTML = `
-            <span class="sticky-pin" aria-hidden="true"></span>
-            <div class="sticky-content">
-              <div class="sticky-avatar">
-                <img src="${friend.avatar || '/icons/friend-placeholder.svg'}" alt="${friend.name}" loading="lazy"
-                  onerror="this.src='/icons/friend-placeholder.svg'" />
-              </div>
-              <div class="sticky-name">${friend.name}</div>
-              ${friend.description ? `<div class="sticky-desc">${friend.description}</div>` : ''}
-            </div>
-          `
-          board?.appendChild(a)
-
-          const img = a.querySelector('img')
-          if (img) {
-            img.addEventListener('error', () => {
-              img.src = '/icons/friend-placeholder.svg'
-            })
-            if (img.complete && img.naturalWidth === 0) {
-              img.src = '/icons/friend-placeholder.svg'
-            }
-          }
+          board?.appendChild(createFriendCard(friend, initialCardCount + index))
         })
 
         if (meta && published.length > 0) {
@@ -444,7 +466,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     padding: 2rem 0 1rem;
   }
 
-  .sticky-note {
+  :global(.friends-board .sticky-note) {
     width: 100%;
     min-height: 12.5rem;
     padding: 2.25rem 1rem 1rem;
@@ -464,7 +486,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     text-align: center;
   }
 
-  .sticky-note:hover {
+  :global(.friends-board .sticky-note:hover) {
     transform: rotate(0deg) translateY(-0.25rem);
     box-shadow:
       inset 0 -40px 40px rgba(0,0,0,0.02),
@@ -472,13 +494,13 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     z-index: 10;
   }
 
-  .sticky-note:focus-visible {
+  :global(.friends-board .sticky-note:focus-visible) {
     outline: 2px solid var(--primary);
     outline-offset: 4px;
     transform: rotate(0deg) translateY(-0.25rem);
   }
 
-  .sticky-pin {
+  :global(.friends-board .sticky-pin) {
     position: absolute;
     top: -8px;
     left: 50%;
@@ -492,7 +514,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
       inset 0 -1px 2px rgba(0,0,0,0.1);
   }
 
-  .sticky-pin::after {
+  :global(.friends-board .sticky-pin::after) {
     content: '';
     position: absolute;
     top: 3px;
@@ -503,7 +525,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     border-radius: 50%;
   }
 
-  .sticky-content {
+  :global(.friends-board .sticky-content) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -511,7 +533,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     width: 100%;
   }
 
-  .sticky-avatar {
+  :global(.friends-board .sticky-avatar) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -527,7 +549,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
 
-  .sticky-avatar img {
+  :global(.friends-board .sticky-avatar img) {
     display: block;
     flex: 0 0 100%;
     width: 100%;
@@ -536,14 +558,14 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
     object-position: center center;
   }
 
-  .sticky-name {
+  :global(.friends-board .sticky-name) {
     font-weight: 700;
     font-size: 0.9375rem;
     color: #1a1a1a;
     line-height: 1.3;
   }
 
-  .sticky-desc {
+  :global(.friends-board .sticky-desc) {
     font-size: 0.8125rem;
     color: #555;
     line-height: 1.4;
@@ -837,22 +859,22 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
       padding: 1.5rem 0 0.5rem;
     }
 
-    .sticky-note {
+    :global(.friends-board .sticky-note) {
       max-width: 100%;
       min-height: 10.625rem;
       padding: 1.75rem 0.75rem 0.75rem;
     }
 
-    .sticky-avatar {
+    :global(.friends-board .sticky-avatar) {
       width: 52px;
       height: 52px;
     }
 
-    .sticky-name {
+    :global(.friends-board .sticky-name) {
       font-size: 0.875rem;
     }
 
-    .sticky-desc {
+    :global(.friends-board .sticky-desc) {
       font-size: 0.75rem;
     }
   }
@@ -863,12 +885,12 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
       padding: 2.5rem 0 1.5rem;
     }
 
-    .sticky-note {
+    :global(.friends-board .sticky-note) {
       min-height: 210px;
       padding: 2.5rem 1.25rem 1.25rem;
     }
 
-    .sticky-avatar {
+    :global(.friends-board .sticky-avatar) {
       width: 68px;
       height: 68px;
     }
@@ -876,7 +898,7 @@ const stickyColors = ['#fef08a', '#bbf7d0', '#bfdbfe', '#fbcfe8', '#e9d5ff', '#f
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .sticky-note,
+    :global(.friends-board .sticky-note),
     .application-toggle,
     .friends-form input,
     .friends-form textarea,
