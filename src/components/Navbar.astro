@@ -36,6 +36,11 @@ const navItems = [
     label: currentUI.about,
     className: getNavItemClass(isAboutActive),
   },
+  {
+    href: 'https://www.travellings.cn/go.html',
+    label: '开往',
+    className: getNavItemClass(false),
+  },
 ]
 ---
 
@@ -54,6 +59,8 @@ const navItems = [
         <a
           href={item.href.startsWith('http') ? item.href : getLocalizedPath(item.href)}
           class={item.className}
+          target={item.href.startsWith('http') ? '_blank' : undefined}
+          rel={item.href.startsWith('http') ? 'noopener' : undefined}
         >
           {item.label}
         </a>
