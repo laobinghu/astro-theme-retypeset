@@ -20,7 +20,7 @@ export const themeConfig: ThemeConfig = {
     base: '/', // e.g., '/blog', '/docs'
     // favicon url
     // recommended formats: svg, png or ico
-    favicon: 'https://cdn.647382.xyz/avatar/avatar.jpg', // or https://example.com/favicon.svg
+    favicon: '/icons/favicon.ico', // or https://example.com/favicon.svg
     // site avatar for friend link exchange
     avatar: 'https://cdn.647382.xyz/avatar/avatar.jpg', // or https://example.com/avatar.png
   },
@@ -173,7 +173,7 @@ export const themeConfig: ThemeConfig = {
   preload: {
     // image hosting url
     // optimize remote images in Markdown files to avoid cumulative layout shift
-    imageHostURL: '',
+    imageHostURL: 'https://cdn.647382.xyz',
     // custom google analytics js
     // for users who proxy tracking scripts to a custom domain
     // see https://gist.github.com/xiaopc/0602f06ca465d76bd9efd3dda9393738
